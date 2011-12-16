@@ -1,16 +1,27 @@
+\letter A
+  Additional Requirements, \indexit{8}
+\letter E
+  Examples, \indexit{6}
 \letter G
-  `GaloisGroupOnRoots', 4
-  Getting and Installing this Package, \indexit{5}
+  `GaloisGroupOnRoots', 5
+  Getting and Installing this Package, \indexit{8}
 \letter I
+  `InfoRadiroot', 7
+  `IsomorphicMatrixField', 4
+  `IsomorphismMatrixField', 4
+  `IsSeparablePolynomial', 4
   `IsSolvable', 4
   `IsSolvablePolynomial', 4
 \letter L
-  Loading the Package, \indexit{5}
+  License, \indexit{3}
+  Loading and Testing the Package, \indexit{8}
 \letter M
-  Methods for rational polynomials, \indexit{4}
+  Methods for Rational Polynomials, \indexit{4}
 \letter R
-  `RootsOfPolynomialAsRadicals', 4
-  `RootsOfPolynomialAsRadicalsNC', 4
+  `RootsAsMatrices', 4
+  `RootsOfPolynomialAsRadicals', 5
+  `RootsOfPolynomialAsRadicalsNC', 6
 \letter S
-  Solving a polynomial by radicals, \indexit{4}
+  `SetInfoLevel', 7
+  Solving a Polynomial by Radicals, \indexit{5}
   `SplittingField', 4
