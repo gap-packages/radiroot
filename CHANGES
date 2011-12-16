@@ -3,6 +3,14 @@
 ===========================================================================
 
 ==========================
+ Changes from 2.2 -> 2.3:
+==========================
+
+  - Testfile with examples from documentation added
+  - Bug in 'RR_RootOfUnity' reported by David Sevilla fixed by use of
+    'IsomorphismMatrixField' instead of 'EquationOrderBasis' 
+
+==========================
  Changes from 2.1 -> 2.2:
 ==========================
 

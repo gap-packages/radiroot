@@ -5,7 +5,7 @@
 ##
 ##  Installation file for the main function of the RADIROOT package
 ##
-#H  @(#)$Id: Radicals.gi,v 1.3 2006/11/24 15:04:18 gap Exp $
+#H  @(#)$Id: Radicals.gi,v 1.4 2007/06/15 10:34:24 gap Exp $
 ##
 #Y  2006
 ##
@@ -37,9 +37,8 @@ InstallGlobalFunction( RR_RootOfUnity, function( erw, ord )
             Info( InfoRadiroot, 4, "            Adjoining ", i,
                                    "-th root of unity" );
 	elif Degree( faktor ) = 1 then
-	    unity := unity * 
-                     LinearCombination( EquationOrderBasis( erw.K ), 
-                                        ExtRepOfObj( -Value( faktor, 0 ) ));
+	    unity := unity * Image( IsomorphismMatrixField( erw.H ),
+                                    -Value( faktor, 0 ) );
             Info( InfoRadiroot, 4, "            Calculate ", i,
                                    "-th root of unity" );
         else
