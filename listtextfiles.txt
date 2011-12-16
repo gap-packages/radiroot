@@ -22,12 +22,15 @@ radiroot/htm/indxL.htm
 radiroot/htm/indxA.htm
 radiroot/htm/indxR.htm
 radiroot/htm/indxG.htm
+radiroot/htm/CHAP000.htm
 radiroot/htm/chapters.htm
 radiroot/htm/biblio.htm
 radiroot/htm/CHAP001.htm
 radiroot/htm/indxT.htm
 radiroot/htm/CHAP004.htm
 radiroot/htm/indxI.htm
+radiroot/tst/docexmpl.tst
+radiroot/tst/testall.g
 radiroot/lib/Maple.gi
 radiroot/lib/SplittField.gd
 radiroot/lib/Strings.gi

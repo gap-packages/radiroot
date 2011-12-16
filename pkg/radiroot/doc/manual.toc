@@ -7,7 +7,7 @@
 \chapcontents {3}{The Info Class of the Package}{8}
 \chapcontents {4}{Installation}{9}
 \seccontents {4.1}{Getting and Installing this Package} {9}
-\seccontents {4.2}{Loading the Package} {9}
+\seccontents {4.2}{Loading and Testing the Package} {9}
 \seccontents {4.3}{Additional Requirements} {9}
 \chapcontents {}{Bibliography}{10}
 \chapcontents {}{Index}{11}

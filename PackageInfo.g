@@ -4,7 +4,7 @@
 ##
 ## The package info file for the RadiRoot package
 ##
-#H $Id: PackageInfo.g,v 1.5 2007/05/10 11:09:30 gap Exp $
+#H $Id: PackageInfo.g,v 1.6 2007/06/15 10:34:24 gap Exp $
 ##
 #Y 2006
 ##
@@ -13,8 +13,8 @@ SetPackageInfo( rec(
 
 PackageName := "RadiRoot",
 Subtitle := "Roots of a Polynomial as Radicals",
-Version := "2.2",
-Date := "09/05/2007",
+Version := "2.3",
+Date := "15/06/2007",
 
 ArchiveURL := Concatenation([
 "http://www.icm.tu-bs.de/ag_algebra/software/distler/radiroot/radiroot-",
@@ -96,7 +96,7 @@ PackageDoc := rec(
 ##  the package need other packages to be available?
 Dependencies := rec(
   GAP := ">=4.4",
-  NeededOtherPackages := [[ "alnuth", ">=2.2.2" ]],
+  NeededOtherPackages := [[ "alnuth", ">=2.2.3" ]],
   SuggestedOtherPackages := [],
   ExternalConditions := ["latex and the dvi-viewer xdvi are recommended"]
 ),

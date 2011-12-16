@@ -6,7 +6,7 @@
 <H3>Sections</H3>
 <oL>
 <li> <A HREF="CHAP004.htm#SECT001">Getting and Installing this Package</a>
-<li> <A HREF="CHAP004.htm#SECT002">Loading the Package</a>
+<li> <A HREF="CHAP004.htm#SECT002">Loading and Testing the Package</a>
 <li> <A HREF="CHAP004.htm#SECT003">Additional Requirements</a>
 </ol><p>
 <p>
@@ -20,7 +20,7 @@ http://www.icm.tu-bs.de/ag_algebra/software/distler/radiroot
 </pre>
 <p>
 in form of a gzipped tar-archive. For installation instructions see
-Chapter&nbsp;<a href="badlink:ref:Installing a GAP Package">Installing a GAP Package</a> in the <font face="Gill Sans,Helvetica,Arial">GAP</font> reference manual. 
+Chapter&nbsp;<a href="../../../doc/htm/ref/CHAP074.htm#SECT001">Installing a GAP Package</a> in the <font face="Gill Sans,Helvetica,Arial">GAP</font> reference manual. 
 Normally you will unpack the archive in the <code>pkg</code> directory of your
 <font face="Gill Sans,Helvetica,Arial">GAP</font> version by typing:
 <p>
@@ -29,7 +29,7 @@ Normally you will unpack the archive in the <code>pkg</code> directory of your
 </pre>
 <p>
 <p>
-<h2><a name="SECT002">4.2 Loading the Package</a></h2>
+<h2><a name="SECT002">4.2 Loading and Testing the Package</a></h2>
 <p><p>
 To use the <font face="Gill Sans,Helvetica,Arial">Radiroot</font> package you have to request it explicitly. This  is
 done by calling
@@ -37,24 +37,31 @@ done by calling
 <pre>
 gap&gt; LoadPackage("radiroot");
 -----------------------------------------------------------------------------
-Loading  RadiRoot 2.2 (Roots of a Polynomial as Radicals)
+Loading  RadiRoot 2.3 (Roots of a Polynomial as Radicals)
 by Andreas Distler (a.distler@tu-bs.de).
 -----------------------------------------------------------------------------
 true
 </pre>
 <p>
-The <code>LoadPackage</code> command is described  in  Section&nbsp;<a href="badlink:ref:LoadPackage">LoadPackage</a>  in
+The <code>LoadPackage</code> command is described  in  Section&nbsp;<a href="../../../doc/htm/ref/CHAP074.htm#SSEC002.1">LoadPackage</a>  in
 the <font face="Gill Sans,Helvetica,Arial">GAP</font> reference manual.
 <p>
 If you want to load the <font face="Gill Sans,Helvetica,Arial">Radiroot</font> package by default, you  can  put  the
-<code>LoadPackage</code> command  into  your  <code>.gaprc</code>  file  (see  Section&nbsp;<a href="badlink:ref:The .gaprc file">The .gaprc file</a> in the <font face="Gill Sans,Helvetica,Arial">GAP</font> reference manual).
+<code>LoadPackage</code> command  into  your  <code>.gaprc</code>  file  (see  Section&nbsp;<a href="../../../doc/htm/ref/CHAP003.htm#SECT004">The .gaprc file</a> in the <font face="Gill Sans,Helvetica,Arial">GAP</font> reference manual).
+<p>
+Once the package is loaded, it is possible to check the correct
+    installation by running the test suite of the package with the command
+<p>
+<pre>
+    gap&gt; ReadPackage( "radiroot", "tst/testall.g" );
+</pre>
 <p>
 <p>
 <h2><a name="SECT003">4.3 Additional Requirements</a></h2>
 <p><p>
 To use <font face="Gill Sans,Helvetica,Arial">Radiroot</font> the package <font face="Gill Sans,Helvetica,Arial">Alnuth</font> 2.2.2 or higher has to be
 loaded with its full functionality available. This means in particular
-that KANT <a href="biblio.htm#KANT"><cite>KANT</cite></a> in version 2.4 or 2.5 need to be installed.
+that KANT <a href="biblio.htm#KANT"><cite>KANT</cite></a> in version 2.4 or 2.5 needs to be installed.
 <p>
 In the standard mode a dvi file is created to display the roots of a
 polynomial. As default the package uses the command <code>latex</code> searched
@@ -66,5 +73,5 @@ in the subdirectory <code>lib</code> of the package.
 <p>
 [<a href = "chapters.htm">Up</a>] [<a href ="CHAP003.htm">Previous</a>] [<a href = "theindex.htm">Index</a>]
 <P>
-<address>Radiroot manual<br>May 2007
+<address>Radiroot manual<br>August 2007
 </address></body></html>
