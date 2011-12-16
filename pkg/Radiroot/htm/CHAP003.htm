@@ -1,0 +1,68 @@
+<html><head><title>[Radiroot] 3 Installation</title></head>
+<body text="#000000" bgcolor="#ffffff">
+[<a href = "chapters.htm">Up</a>] [<a href ="CHAP002.htm">Previous</a>] [<a href = "theindex.htm">Index</a>]
+<h1>3 Installation</h1><p>
+<P>
+<H3>Sections</H3>
+<oL>
+<li> <A HREF="CHAP003.htm#SECT001">Getting and Installing this Package</a>
+<li> <A HREF="CHAP003.htm#SECT002">Loading the Package</a>
+<li> <A HREF="CHAP003.htm#SECT003">Additional Requirements</a>
+</ol><p>
+<p>
+<p>
+<h2><a name="SECT001">3.1 Getting and Installing this Package</a></h2>
+<p><p>
+This package is available at
+<p>
+<pre>
+http://www.icm.tu-bs.de/ag_algebra/software/distler/radiroot
+</pre>
+<p>
+in form of a gzipped tar-archive. For the installation instructions see
+Chapter&nbsp;<a href="../../../doc/htm/ref/CHAP074.htm#SECT001">Installing a GAP Package</a> in the <font face="Gill Sans,Helvetica,Arial">GAP</font> Reference Manual. 
+Normally you will unpack the archive in the 'pkg' directory of your
+<font face="Gill Sans,Helvetica,Arial">GAP</font>-Version by typing:
+<p>
+<pre>
+    bash&gt; tar xfz radiroot.tar.gz        # for the gzipped tar-archive
+</pre>
+<p>
+<p>
+<h2><a name="SECT002">3.2 Loading the Package</a></h2>
+<p><p>
+To use the <font face="Gill Sans,Helvetica,Arial">Radiroot</font> Package you have to request it explicitly. This  is
+done by calling
+<p>
+<pre>
+gap&gt; LoadPackage("radiroot");
+-----------------------------------------------------------------------------
+Loading  RadiRoot 1.0 (Roots of a Polynomial as Radicals)
+by Andreas Distler (a.distler@tu-bs.de).
+-----------------------------------------------------------------------------
+true
+</pre>
+<p>
+The <code>LoadPackage</code> command is described  in  Section&nbsp;<a href="../../../doc/htm/ref/CHAP074.htm#SSEC002.1">LoadPackage</a>  in
+the <font face="Gill Sans,Helvetica,Arial">GAP</font> Reference Manual.
+<p>
+If you want to load the <font face="Gill Sans,Helvetica,Arial">Radiroot</font> package by default, you  can  put  the
+<code>LoadPackage</code> command  into  your  <code>.gaprc</code>  file  (see  Section&nbsp;<a href="../../../doc/htm/ref/CHAP003.htm#SECT004">The .gaprc file</a> in the <font face="Gill Sans,Helvetica,Arial">GAP</font> Reference Manual).
+<p>
+<p>
+<h2><a name="SECT003">3.3 Additional Requirements</a></h2>
+<p><p>
+The package Alnuth 2.0 or higher has to be available with its full
+functionality to use <font face="Gill Sans,Helvetica,Arial">Radiroot</font>.
+<p>
+A dvi file is created to display roots. As default the package uses the
+command <code>latex</code> searched for in your system programs to create the dvi file
+and the command <code>xdvi</code> to start the dvi viewer. If you can't use this
+settings you will have to change the function <code>RR_Display</code> in the file
+<code>Strings.gi</code> in the subdirectory <code>lib</code>.
+<p>
+<p>
+[<a href = "chapters.htm">Up</a>] [<a href ="CHAP002.htm">Previous</a>] [<a href = "theindex.htm">Index</a>]
+<P>
+<address>Radiroot manual<br>Januar 2006
+</address></body></html>

@@ -1,9 +1,0 @@
-\chapcontents {1}{Introduction}{3}
-\chapcontents {2}{Functionality of the package}{4}
-\seccontents {2.1}{Methods for rational polynomials} {4}
-\seccontents {2.2}{Solving a polynomial by radicals} {4}
-\chapcontents {3}{Installation}{5}
-\seccontents {3.1}{Getting and Installing this Package} {5}
-\seccontents {3.2}{Loading the Package} {5}
-\chapcontents {}{Bibliography}{6}
-\chapcontents {}{Index}{7}

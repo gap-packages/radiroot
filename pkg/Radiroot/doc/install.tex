@@ -1,0 +1,67 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%W  install.tex          Radiroot documentation           Andreas Distler
+%%
+%H  $Id:$
+%%
+%Y  2005
+%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Chapter{Installation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Section{Getting and Installing this Package}
+
+This package is available at
+
+\begintt
+http://www.icm.tu-bs.de/ag_algebra/software/distler/radiroot
+\endtt
+
+in form of a gzipped tar-archive. For the installation instructions see
+Chapter~"ref:Installing a GAP Package" in the {\GAP} Reference Manual. 
+Normally you will unpack the archive in the 'pkg' directory of your
+{\GAP}-Version by typing:
+
+\beginexample
+    bash> tar xfz radiroot.tar.gz        # for the gzipped tar-archive
+\endexample
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Section{Loading the Package}
+
+To use the {\Radiroot} Package you have to request it explicitly. This  is
+done by calling
+
+\beginexample
+gap> LoadPackage("radiroot");
+-----------------------------------------------------------------------------
+Loading  RadiRoot 1.0 (Roots of a Polynomial as Radicals)
+by Andreas Distler (a.distler@tu-bs.de).
+-----------------------------------------------------------------------------
+true
+\endexample
+
+The `LoadPackage' command is described  in  Section~"ref:LoadPackage"  in
+the {\GAP} Reference Manual.
+
+If you want to load the {\Radiroot} package by default, you  can  put  the
+`LoadPackage' command  into  your  `.gaprc'  file  (see  Section~"ref:The
+.gaprc file" in the {\GAP} Reference Manual).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Section{Additional Requirements}
+
+The package Alnuth 2.0 or higher has to be available with its full
+functionality to use {\Radiroot}.
+
+A dvi file is created to display roots. As default the package uses the
+command `latex' searched for in your system programs to create the dvi file
+and the command `xdvi' to start the dvi viewer. If you can't use this
+settings you will have to change the function `RR_Display' in the file
+`Strings.gi' in the subdirectory `lib'.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%E
