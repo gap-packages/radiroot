@@ -1,6 +1,3 @@
-Radiroot/doc/manual.pdf
-Radiroot/doc/manual.log
-Radiroot/doc/manual.toc
-Radiroot/doc/make_doc
-Radiroot/doc/manual.mst
-Radiroot/doc/manual.lab
+radiroot/doc/manual.log
+radiroot/doc/make_doc
+radiroot/doc/manual.mst
