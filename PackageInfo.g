@@ -4,7 +4,7 @@
 ##
 ## The package info file for the RadiRoot package
 ##
-#H $Id: PackageInfo.g,v 1.3 2006/11/24 15:02:58 gap Exp $
+#H $Id: PackageInfo.g,v 1.5 2007/05/10 11:09:30 gap Exp $
 ##
 #Y 2006
 ##
@@ -13,8 +13,8 @@ SetPackageInfo( rec(
 
 PackageName := "RadiRoot",
 Subtitle := "Roots of a Polynomial as Radicals",
-Version := "2.1",
-Date := "24/11/2006",
+Version := "2.2",
+Date := "09/05/2007",
 
 ArchiveURL := Concatenation([
 "http://www.icm.tu-bs.de/ag_algebra/software/distler/radiroot/radiroot-",
@@ -31,16 +31,15 @@ Persons := [
       #WWWHome       := "http://www.tu-bs.de/~beick",
       PostalAddress := Concatenation( [
             "Mathematical Institute\n",
-            "University of St. Andrews\n",
-            "North Haugh\n St. Andrews, Fife, KY16 9SS\n Scotland, UK" ] ),
+            "University of St Andrews\n",
+            "North Haugh\n St Andrews, Fife, KY16 9SS\n Scotland, UK" ] ),
       Place         := "St. Andrews",
-      Institution   := "University of St. Andrews")
+      Institution   := "University of St Andrews")
     ],
 
-Status := "deposited",
-
-#CommunicatedBy := "",
-#AcceptDate := "",
+Status := "accepted",
+CommunicatedBy := "Edmund Robertson (St Andrews)",
+AcceptDate := "02/2007",
 
 README_URL := "http://www.icm.tu-bs.de/ag_algebra/software/distler/radiroot/README",
 PackageInfoURL := "http://www.icm.tu-bs.de/ag_algebra/software/distler/radiroot/PackageInfo.g",
