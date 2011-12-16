@@ -161,19 +161,17 @@ InstallGlobalFunction( RR_NstInDatei, function( coeffs, basstr )
     anf := true;
     file := OutputTextFile( "~/NstinRadikaldarstellung.tex", false );
     SetPrintFormattingStatus( file, false );
-    AppendTo( file, "\\documentclass[fleqn]{article} \n",
-                    "\\setlength{\\paperwidth}{42cm} \n",
-                    "\\setlength{\\textwidth}{40cm} \n", 
+    AppendTo( file, "\\documentclass[fleqn, a4paper]{article} \n",
                     "\\begin{document} \n",
-                    "\\begin{eqnarray*} \n");
+                    "\\[ \n");
     for i in [ 1..Length(coeffs) ] do
         if coeffs[i] <> 0 then
-            AppendTo( file, "\\\\\n",
-                      RR_KoeffizientAlsString( coeffs[i], anf ), basstr[i]);
+            AppendTo( file, RR_KoeffizientAlsString( coeffs[i], anf ),
+                      basstr[i], "\n");
             anf := false;
         fi;
     od;
-    AppendTo( file, "\n\\end{eqnarray*}\n",
+    AppendTo( file, "\\] \n",
                     "\\end{document} \n" );
     CloseStream( file );
   
