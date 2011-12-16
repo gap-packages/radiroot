@@ -1,0 +1,14 @@
+radiroot/doc/manual.ind
+radiroot/doc/manual.pdf
+radiroot/doc/manual.log
+radiroot/doc/manual.ilg
+radiroot/doc/manual.toc
+radiroot/doc/manual.bbl
+radiroot/doc/tthout
+radiroot/doc/make_doc
+radiroot/doc/manual.dvi
+radiroot/doc/manual.blg
+radiroot/doc/manual.mst
+radiroot/doc/manual.aux
+radiroot/doc/manual.lab
+radiroot/doc/manual.idx

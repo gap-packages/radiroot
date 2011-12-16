@@ -1,0 +1,15 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{DFK{\etalchar{+}}97}
+
+\bibitem[DFK{\etalchar{+}}97]{KANT}
+M.~Daberkow, C.~Fieker, J.~Kl\"uners, M.~Pohst, K.Roegner, and K.~Wildanger.
+\newblock Kant {V4}.
+\newblock {\em J. Symb. Comput.}, 24:267 -- 283, 1997.
+
+\bibitem[Dis05]{Distler05}
+Andreas Distler.
+\newblock Ein {A}lgorithmus zum {L}\accent127osen einer {P}olynomgleichung
+  durch {R}adikale.
+\newblock Diplomarbeit, TU Braunschweig, 2005.
+
+\end{thebibliography}
