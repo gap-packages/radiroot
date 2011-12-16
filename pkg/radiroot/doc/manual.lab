@@ -1,30 +1,17 @@
 \makelabel{radiroot:Introduction}{1}
-\makelabel{radiroot:License}{1.1}
-\makelabel{radiroot:Functionality of the Package}{2}
-\makelabel{radiroot:Methods for Rational Polynomials}{2.1}
-\makelabel{radiroot:IsSeparablePolynomial}{2.1.1}
-\makelabel{radiroot:IsSolvable}{2.1.2}
-\makelabel{radiroot:IsSolvablePolynomial}{2.1.2}
-\makelabel{radiroot:SplittingField}{2.1.3}
-\makelabel{radiroot:IsomorphicMatrixField}{2.1.3}
-\makelabel{radiroot:RootsAsMatrices}{2.1.3}
-\makelabel{radiroot:IsomorphismMatrixField}{2.1.3}
-\makelabel{radiroot:GaloisGroupOnRoots}{2.1.4}
-\makelabel{radiroot:Solving a Polynomial by Radicals}{2.2}
+\makelabel{radiroot:Functionality of the package}{2}
+\makelabel{radiroot:Methods for rational polynomials}{2.1}
+\makelabel{radiroot:IsSolvable}{2.1.1}
+\makelabel{radiroot:IsSolvablePolynomial}{2.1.1}
+\makelabel{radiroot:SplittingField}{2.1.2}
+\makelabel{radiroot:GaloisGroupOnRoots}{2.1.3}
+\makelabel{radiroot:Solving a polynomial by radicals}{2.2}
 \makelabel{radiroot:RootsOfPolynomialAsRadicals}{2.2.1}
 \makelabel{radiroot:RootsOfPolynomialAsRadicalsNC}{2.2.2}
-\makelabel{radiroot:Examples}{2.3}
-\makelabel{radiroot:The Info Class of the Package}{3}
-\makelabel{radiroot:InfoRadiroot}{3}
-\makelabel{radiroot:SetInfoLevel}{3}
-\makelabel{radiroot:Installation}{4}
-\makelabel{radiroot:Getting and Installing this Package}{4.1}
-\makelabel{radiroot:Loading and Testing the Package}{4.2}
-\makelabel{radiroot:Additional Requirements}{4.3}
+\makelabel{radiroot:Installation}{3}
+\makelabel{radiroot:Getting and Installing this Package}{3.1}
+\makelabel{radiroot:Loading the Package}{3.2}
 \makelabel{radiroot:Bibliography}{}
-\setcitlab {Abel26}{Abe26}
 \setcitlab {KANT}{DFK{+}97}
 \setcitlab {Distler05}{Dis05}
-\setcitlab {Galois97}{Gal97}
-\setcitlab {Maple10}{MGH{+}05}
 \makelabel{radiroot:Index}{}

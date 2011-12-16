@@ -161,7 +161,7 @@ InstallGlobalFunction( RR_NstInDatei, function( coeffs, basstr )
     anf := true;
     file := OutputTextFile( "~/NstinRadikaldarstellung.tex", false );
     SetPrintFormattingStatus( file, false );
-    AppendTo( file, "\\documentclass[fleqn]{article} \n",
+    AppendTo( file, "\\documentclass{article} \n",
                     "\\setlength{\\paperwidth}{42cm} \n",
                     "\\setlength{\\textwidth}{40cm} \n", 
                     "\\begin{document} \n",

@@ -1,7 +1,6 @@
 radiroot/init.g
 radiroot/CHANGES
 radiroot/read.g
-radiroot/.#pack-radiroot.sh
 radiroot/README
 radiroot/PackageInfo.g
 radiroot/GPL
@@ -11,6 +10,7 @@ radiroot/doc/install.tex
 radiroot/doc/manual.six
 radiroot/doc/info.tex
 radiroot/doc/radiroot.tex
+radiroot/doc/tthmacros.tex
 radiroot/doc/intro.tex
 radiroot/htm/indxM.htm
 radiroot/htm/indxF.htm
@@ -23,7 +23,6 @@ radiroot/htm/indxL.htm
 radiroot/htm/indxA.htm
 radiroot/htm/indxR.htm
 radiroot/htm/indxG.htm
-radiroot/htm/CHAP000.htm
 radiroot/htm/chapters.htm
 radiroot/htm/biblio.htm
 radiroot/htm/CHAP001.htm
@@ -32,7 +31,9 @@ radiroot/htm/CHAP004.htm
 radiroot/htm/indxI.htm
 radiroot/tst/docexmpl.tst
 radiroot/tst/testall.g
+radiroot/lib/eineZeile.gi
 radiroot/lib/Maple.gi
+radiroot/lib/#Radicals.gi#
 radiroot/lib/SplittField.gd
 radiroot/lib/Strings.gi
 radiroot/lib/Manipulations.gd
@@ -42,3 +43,4 @@ radiroot/lib/Radicals.gi
 radiroot/lib/Manipulations.gi
 radiroot/lib/Strings.gd
 radiroot/lib/Radicals.gd
+radiroot/lib/Str.gi

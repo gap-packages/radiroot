@@ -1,23 +1,13 @@
 C intro.tex 1. Introduction
-S 1.1. License
-C radiroot.tex 2. Functionality of the Package
-S 2.1. Methods for Rational Polynomials
-F 2.1. IsSeparablePolynomial
+C radiroot.tex 2. Functionality of the package
+S 2.1. Methods for rational polynomials
 F 2.1. IsSolvable
 F 2.1. IsSolvablePolynomial
 F 2.1. SplittingField
-F 2.1. IsomorphicMatrixField
-F 2.1. RootsAsMatrices
-F 2.1. IsomorphismMatrixField
 F 2.1. GaloisGroupOnRoots
-S 2.2. Solving a Polynomial by Radicals
+S 2.2. Solving a polynomial by radicals
 F 2.2. RootsOfPolynomialAsRadicals
 F 2.2. RootsOfPolynomialAsRadicalsNC
-S 2.3. Examples
-C info.tex 3. The Info Class of the Package
-F 3.0. InfoRadiroot
-F 3.0. SetInfoLevel
-C install.tex 4. Installation
-S 4.1. Getting and Installing this Package
-S 4.2. Loading and Testing the Package
-S 4.3. Additional Requirements
+C install.tex 3. Installation
+S 3.1. Getting and Installing this Package
+S 3.2. Loading the Package

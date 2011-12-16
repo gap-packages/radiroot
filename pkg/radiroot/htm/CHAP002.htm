@@ -55,9 +55,9 @@ gap&gt; L := SplittingField( f );
 &lt;algebraic extension over the Rationals of degree 6&gt;
 gap&gt; y := Indeterminate( L, "y" );;
 gap&gt; FactorsPolynomialAlgExt( L, f );
-[ y+((-168/47-535/94*a-253/94*a^2-24/47*a^3-3/94*a^4)),
-  y+((20/47-441/94*a-253/94*a^2-24/47*a^3-3/94*a^4)),
-  y+((336/47+488/47*a+253/47*a^2+48/47*a^3+3/47*a^4)) ]
+[ y+(-3/94*a^4-24/47*a^3-253/94*a^2-535/94*a-168/47), 
+  y+(-3/94*a^4-24/47*a^3-253/94*a^2-441/94*a+20/47), 
+  y+(3/47*a^4+48/47*a^3+253/47*a^2+488/47*a+336/47) ]
 gap&gt; IsomorphicMatrixField( L );
 &lt;rational matrix field of degree 6&gt;
 gap&gt; Display(RootsAsMatrices(f)[1]);
@@ -74,9 +74,9 @@ MappingByFunction( &lt;algebraic extension over the Rationals of degree
 6&gt;, &lt;rational matrix field of degree
 6&gt;, function( x ) ... end, function( mat ) ... end )
 gap&gt; PreImages( iso, RootsAsMatrices( f ) );
-[ (-336/47-488/47*a-253/47*a^2-48/47*a^3-3/47*a^4),
-  (-20/47+441/94*a+253/94*a^2+24/47*a^3+3/94*a^4),
-  (168/47+535/94*a+253/94*a^2+24/47*a^3+3/94*a^4) ]
+[ -3/47*a^4-48/47*a^3-253/47*a^2-488/47*a-336/47, 
+  3/94*a^4+24/47*a^3+253/94*a^2+441/94*a-20/47, 
+  3/94*a^4+24/47*a^3+253/94*a^2+535/94*a+168/47 ]
 </pre>
 To factorise a polynomial over its splitting field one has to use
 <code>FactorsPolynomialAlgExt</code> (see <font face="Gill Sans,Helvetica,Arial">Alnuth</font>) instead of <code>Factors</code>.
@@ -95,7 +95,7 @@ Group([ (2,3), (1,2) ])
 <p>
 If you only want to get the Galois group abstractly, and if <i>f</i> is
 irreducible of degree at most 15, it is often better to use the
-function <code>GaloisType</code> (see Chapter&nbsp;<a href="badlink:ref:Polynomials over the Rationals">Polynomials over the Rationals</a> in the <font face="Gill Sans,Helvetica,Arial">GAP</font> reference manual).
+function <code>GaloisType</code> (see Chapter&nbsp;<a href="../../../doc/ref/chap67.html#X7F45E9E47EA2C18B">Polynomials over the Rationals</a> in the <font face="Gill Sans,Helvetica,Arial">GAP</font> reference manual).
 <p>
 <p>
 <h2><a name="SECT002">2.2 Solving a Polynomial by Radicals</a></h2>
@@ -237,5 +237,5 @@ gap&gt; time;
 <p>
 [<a href = "chapters.htm">Up</a>] [<a href ="CHAP001.htm">Previous</a>] [<a href ="CHAP003.htm">Next</a>] [<a href = "theindex.htm">Index</a>]
 <P>
-<address>Radiroot manual<br>January 2008
+<address>Radiroot manual<br>October 2011
 </address></body></html>

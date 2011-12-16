@@ -1,4 +1,4 @@
-#############################################################################
+\#############################################################################
 ####
 ##
 #W  Radicals.gi               RADIROOT package                Andreas Distler
@@ -89,7 +89,7 @@ InstallGlobalFunction( RootsOfPolynomialAsRadicals, function( poly )
     galgrp := RR_ConstructGaloisGroup( erw );
     erw.unity := RR_RootOfUnity( erw, Order( galgrp ) );
 
-    elements := RR_CyclicElements( erw, CompositionSeries( galgrp ) );;
+    elements := RR_CyclicElements( erw, CompositionSeries( galgrp ) );
     bas := RR_Radikalbasis( erw, elements );;
     RR_NstInDatei( SolutionMat( List( bas[1], Flat ), Flat(erw.roots[1]) ),
                    bas[2] ); 
