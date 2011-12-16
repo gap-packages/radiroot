@@ -2,7 +2,7 @@
 %%
 %W  radiroot.tex          Radiroot documentation          Andreas Distler
 %%
-%H  $Id: radiroot.tex,v 1.2 2006/10/30 14:44:55 gap Exp $
+%H  $Id: radiroot.tex,v 1.3 2006/11/24 15:03:50 gap Exp $
 %%
 %Y  2005
 %%
@@ -55,13 +55,13 @@ gap> Factors( g );
 [ y+((-168/47-535/94*a-253/94*a^2-24/47*a^3-3/94*a^4)),
   y+((336/47+488/47*a+253/47*a^2+48/47*a^3+3/47*a^4)),
   y+((20/47-441/94*a-253/94*a^2-24/47*a^3-3/94*a^4)) ]
-gap> FactorsPolynomialKant( L, f );
+gap> FactorsPolynomialAlgExt( L, f );
 [ y+((-168/47-535/94*a-253/94*a^2-24/47*a^3-3/94*a^4)),
   y+((20/47-441/94*a-253/94*a^2-24/47*a^3-3/94*a^4)),
   y+((336/47+488/47*a+253/47*a^2+48/47*a^3+3/47*a^4)) ]
 \endexample
 To factorise a polynomial over its splitting field  one has to embed the
-polynomial first, as seen in the example, or use `FactorsPolynomialKant' (see
+polynomial first, as seen in the example, or use `FactorsPolynomialAlgExt' (see
 \Alnuth) instead of `Factors'. The primitive element of the splitting field is
 denoted by `a'.
 
