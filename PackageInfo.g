@@ -4,7 +4,7 @@
 ##
 ## The package info file for the RadiRoot package
 ##
-#H $Id: PackageInfo.g,v 1.6 2007/06/15 10:34:24 gap Exp $
+#H $Id: PackageInfo.g,v 1.7 2008/01/22 11:57:43 gap Exp $
 ##
 #Y 2006
 ##
@@ -13,8 +13,8 @@ SetPackageInfo( rec(
 
 PackageName := "RadiRoot",
 Subtitle := "Roots of a Polynomial as Radicals",
-Version := "2.3",
-Date := "15/06/2007",
+Version := "2.4",
+Date := "22/01/2008",
 
 ArchiveURL := Concatenation([
 "http://www.icm.tu-bs.de/ag_algebra/software/distler/radiroot/radiroot-",
@@ -107,7 +107,7 @@ Autoload := false,
 
 ##  *Optional*, but recommended: path relative to package root to a file which 
 ##  contains as many tests of the package functionality as sensible.
-#TestFile := "tst/testall.g",
+TestFile := "tst/testall.g",
 
 Keywords := ["roots", "radicals"]
 

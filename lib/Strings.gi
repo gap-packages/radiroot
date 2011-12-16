@@ -5,7 +5,7 @@
 ##
 ##  Installation file for the functions that generate Tex-strings
 ##
-#H  $Id: Strings.gi,v 1.2 2006/10/30 13:51:30 gap Exp $
+#H  $Id: Strings.gi,v 1.3 2008/01/22 11:57:43 gap Exp $
 ##
 #Y  2006
 ##
@@ -231,10 +231,12 @@ InstallGlobalFunction( RR_TexFile, function( poly, erw, elements, dir, file )
                 i -> RR_WurzelAlsString(k, coeffs[i], bas[2]));
     min := First( [ 1..Length(erw.roots) ],
                    i -> Length(str[i]) = Minimum( List( str, Length )));
-    if Length( str[min] ) < 1400 then
-      AppendTo( stream, str[min] );
+    if Length( str[min] ) = 0 then
+        AppendTo( stream, "0" );
+    elif Length( str[min] ) < 1400 then
+        AppendTo( stream, str[min] );
     else
-      AppendTo( stream, RR_NstInDatei( k, coeffs[min], bas[2] ));
+        AppendTo( stream, RR_NstInDatei( k, coeffs[min], bas[2] ));
     fi;
     AppendTo(stream, "$\n\\end{document}\n");
 #             "$\n\\\\$",String(Length(str[min])),
