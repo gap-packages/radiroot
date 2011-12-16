@@ -3,6 +3,19 @@
 ===========================================================================
 
 ==========================
+ Changes from 2.3 -> 2.4:
+==========================
+
+  - Corrected documentation, reported by David Sevilla
+  - Bug for linear polynomials reported by David Sevilla fixed in 
+    'RR_RootOfUnity' (introduced with the fix in 2.3)
+  - Polynomials for which the cyclotomic polynomial would splitt in
+    non-linear factors over the splitting field the subsequent function
+    calls to the main functions would give wrong results. FIXED
+  - Introduced method for 'IsomorphismMatrixField' for the Rationals
+  - Corrected output for polynomial 'x'
+
+==========================
  Changes from 2.2 -> 2.3:
 ==========================
 

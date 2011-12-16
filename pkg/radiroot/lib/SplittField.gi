@@ -5,7 +5,7 @@
 ##
 ##  Installs the functions to compute the splitting field of a polynomial
 ##
-#H  $Id: SplittField.gi,v 1.3 2006/11/24 15:04:18 gap Exp $
+#H  $Id: SplittField.gi,v 1.4 2008/01/22 11:57:43 gap Exp $
 ##
 #Y  2006
 ##
@@ -28,7 +28,8 @@ function( f )
         f := f / Gcd( f, Derivative( f ) );    
     fi;
 
-    splitt := RR_Zerfaellungskoerper( f, rec( roots := [ ],
+    splitt := RR_Zerfaellungskoerper( f, 
+                                      rec( roots := [ ],
                                            degs := [ ],
                                            coeffs := [ ],
                                            K := FieldByMatrices([ [[ 1 ]] ]),
@@ -45,6 +46,7 @@ function( f )
     return splitt.H;
 end );
 
+
 #############################################################################
 ##
 #F  IsomorphicMatrixField( <L> )
@@ -54,6 +56,20 @@ end );
 InstallGlobalFunction( IsomorphicMatrixField, function( L )
     return Range( IsomorphismMatrixField( L ) );
 end );
+
+
+#############################################################################
+##
+#O  IsomorphismMatrixField( Rationals )
+##
+##  installs the value for 'IsomorphismMatrixField' of the Rationals
+##
+SetIsomorphismMatrixField( Rationals, 
+                           MappingByFunction( Rationals,
+                                              FieldByMatrices([[[ 1 ]]]),
+                                              x -> [[ x ]],
+                                              mat -> mat[1][1] ));
+
 
 #############################################################################
 ##
@@ -187,6 +203,12 @@ end );
 InstallGlobalFunction( RR_Zerfaellungskoerper, function( poly, erw )
     local matA,matB,faktoren,i,f,minpol,roots,primEl, map;
 
+    # catch trivial case
+    if Degree( poly ) = 1 then 
+        erw.roots := [ [ ], [ ] ];
+        return erw;
+    fi;
+
     # Splitting field already known
     if not IsBound( erw.unity ) and HasSplittingField( poly ) then
         erw.H := SplittingField( poly );
@@ -202,10 +224,6 @@ InstallGlobalFunction( RR_Zerfaellungskoerper, function( poly, erw )
         return erw;   
     fi;
 
-    if Degree( poly ) = 1 then 
-        erw.roots := [ [ ], [ ] ];
-        return erw;
-    fi;
     roots := [ ];
 
     # repeat until <poly> factors in linear polynomials

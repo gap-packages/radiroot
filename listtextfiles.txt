@@ -1,6 +1,7 @@
 radiroot/init.g
 radiroot/CHANGES
 radiroot/read.g
+radiroot/.#pack-radiroot.sh
 radiroot/README
 radiroot/PackageInfo.g
 radiroot/GPL

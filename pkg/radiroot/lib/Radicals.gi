@@ -5,7 +5,7 @@
 ##
 ##  Installation file for the main function of the RADIROOT package
 ##
-#H  @(#)$Id: Radicals.gi,v 1.4 2007/06/15 10:34:24 gap Exp $
+#H  @(#)$Id: Radicals.gi,v 1.5 2008/01/22 11:57:43 gap Exp $
 ##
 #Y  2006
 ##
@@ -23,6 +23,9 @@ InstallGlobalFunction( RR_RootOfUnity, function( erw, ord )
 
     Info( InfoRadiroot, 2, "    Finding root of unity" );
     unity := One( erw.K );
+    if ord = 1 then
+        return unity;
+    fi;
     cond := 1;
     m := 1;
     for i in DuplicateFreeList( Factors( ord ) ) do
@@ -264,6 +267,9 @@ InstallGlobalFunction( RootsOfPolynomialAsRadicalsNC, function( arg )
         poly := RR_SimplifiedPolynomial( f );
         Info( InfoRadiroot, 2, "    Normed, simplified Polynomial: ", poly );
     else
+        if LeadingCoefficient( f ) <> 1 then
+            Error( "f must be a normed polynomial" );
+        fi;
         poly := f;
     fi;
    
@@ -274,12 +280,6 @@ InstallGlobalFunction( RootsOfPolynomialAsRadicalsNC, function( arg )
                                               K:=FieldByMatrices([ [[ 1 ]] ]),
                                               H:=Rationals ));;
 
-    # try to find root of unity, if fail start all over
-    erw.unity := RR_RootOfUnity( erw, DegreeOverPrimeField(erw.K) );
-    if IsInt(erw.unity) then 
-        erw := RR_SplittField(poly, erw.unity );
-    fi;
-
     # get all roots, set a basis of the primitive element
     erw.roots := RR_Roots( [ [], erw.roots[1], erw.roots[2] ], erw );;
     Add( erw.roots, 
@@ -287,62 +287,86 @@ InstallGlobalFunction( RootsOfPolynomialAsRadicalsNC, function( arg )
          -Sum( erw.roots ) );
     SetRootsAsMatrices( poly, erw.roots );
 
+    # get structure of primitive element to use RR_Produkt
     erw.coeffs := Filtered(Coefficients(Basis(erw.K),PrimitiveElement(erw.K)),
                            i -> i <> 0 );
-    if HasGaloisGroupOnRoots( poly ) then
+
+    # for mode "off" it remains to compute the Galois group
+    if mode = "off" then
+        if not HasGaloisGroupOnRoots( poly ) then
+            erw.unity := 1;
+            erw.galgrp := RR_ConstructGaloisGroup( erw );
+            SetGaloisGroupOnRoots( poly, erw.galgrp );
+        fi;
+        return;
+    fi;
+
+    # try to find root of unity, if fail start all over
+    erw.unity := RR_RootOfUnity( erw, DegreeOverPrimeField(erw.K) );
+    if IsInt(erw.unity) then 
+        erw := RR_SplittField(poly, erw.unity );
+        # need roots in bigger field
+        erw.roots := RR_Roots( [ [], erw.roots[1], erw.roots[2] ], erw );;
+        Add(erw.roots, 
+            -CoefficientsOfUnivariatePolynomial(poly)[Degree(poly)]
+            *One(erw.K) - Sum( erw.roots ) );
+        erw.coeffs := Filtered( Coefficients( Basis( erw.K ),
+                                              PrimitiveElement( erw.K )),
+                                i -> i <> 0 );
+        erw.galgrp := RR_ConstructGaloisGroup( erw );
+    elif HasGaloisGroupOnRoots( poly ) then
         erw.galgrp := GaloisGroupOnRoots( poly );
     else
         erw.galgrp := RR_ConstructGaloisGroup( erw );
+        SetGaloisGroupOnRoots( poly, erw.galgrp );
     fi;
-    SetGaloisGroupOnRoots( poly, erw.galgrp );
+
     Info( InfoRadiroot, 2, "    Galoisgroup as PermGrp is ", erw.galgrp );
 
-    if mode <> "off" then
-        if not IsSolvable( erw.galgrp ) then
-            Info( InfoRadiroot, 1, "Polynomial is not solvable." );
-            return fail;
-        fi; 
+    if not IsSolvable( erw.galgrp ) then
+        Info( InfoRadiroot, 1, "Polynomial is not solvable." );
+        return fail;
+    fi; 
 
-        Info(InfoRadiroot,4,"            h := Lcm( Order( Galoisgroup ) ) = ",
-                            Product(Unique(Factors(Order(erw.galgrp)))) );
-        if IsDiagonalMat( erw.unity ) then
-            Info( InfoRadiroot, 3, 
-                  "        no root of unity in the splitting field"); 
-            compser := CompositionSeries( erw.galgrp );
-        elif Length( erw.degs ) <> Length( erw.coeffs ) then
-            compser := CompositionSeries( erw.galgrp );
-        else
-            fix := Filtered(AsList(erw.galgrp), 
-                            p -> RR_Produkt(erw, erw.unity, p) = erw.unity);
-            compser := RR_CompositionSeries( erw.galgrp, AsGroup( fix ));
-        fi; 
-        erw.K!.cyclics := RR_CyclicElements( erw, compser );;
-        Info( InfoRadiroot, 2, "    computed cyclic elements" );
+    Info(InfoRadiroot,4,"            h := Lcm( Order( Galoisgroup ) ) = ",
+                        Product(Unique(Factors(Order(erw.galgrp)))) );
+    if IsDiagonalMat( erw.unity ) then
+        Info( InfoRadiroot, 3, 
+              "        no root of unity in the splitting field"); 
+        compser := CompositionSeries( erw.galgrp );
+    elif Length( erw.degs ) <> Length( erw.coeffs ) then
+        compser := CompositionSeries( erw.galgrp );
+    else
+        fix := Filtered(AsList(erw.galgrp), 
+                        p -> RR_Produkt(erw, erw.unity, p) = erw.unity);
+        compser := RR_CompositionSeries( erw.galgrp, AsGroup( fix ));
+    fi; 
+    erw.K!.cyclics := RR_CyclicElements( erw, compser );;
+    Info( InfoRadiroot, 2, "    computed cyclic elements" );
 
-        if 3 = Length( arg ) then
-            file := arg[3];
-            dir := DirectoryCurrent( );
-        else
-            dir := DirectoryTemporary( );
-            file := "Nst";
-        fi;
-        if mode <> "maple" then
-            if IsExistingFile( Concatenation( file, ".tex" ) ) then
-                Error( file, ".tex already exists" );
-            fi;
-            path := RR_TexFile( f, erw, erw.K!.cyclics, dir, 
-                                Concatenation( file, ".tex" ) );
-            if mode = "dvi" then
-                RR_Display( file, dir );
-            fi;
-        else
-            if IsExistingFile( file ) then
-                Error( file, " already exists" );
-            fi;
-            path := RR_MapleFile( f, erw, erw.K!.cyclics, Filename(dir,file));
-        fi;
-        return path;
+    if 3 = Length( arg ) then
+        file := arg[3];
+        dir := DirectoryCurrent( );
+    else
+        dir := DirectoryTemporary( );
+        file := "Nst";
     fi;
+    if mode <> "maple" then
+        if IsExistingFile( Concatenation( file, ".tex" ) ) then
+            Error( file, ".tex already exists" );
+        fi;
+        path := RR_TexFile( f, erw, erw.K!.cyclics, dir, 
+                            Concatenation( file, ".tex" ) );
+        if mode = "dvi" then
+            RR_Display( file, dir );
+        fi;
+    else
+        if IsExistingFile( file ) then
+            Error( file, " already exists" );
+        fi;
+        path := RR_MapleFile( f, erw, erw.K!.cyclics, Filename(dir,file));
+    fi;
+    return path;
 
 end );
 
