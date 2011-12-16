@@ -4,7 +4,7 @@
 ##
 ## The package info file for the RadiRoot package
 ##
-#H $Id: PackageInfo.g,v 1.9 2011/10/28 12:35:28 gap Exp $
+#H $Id: PackageInfo.g,v 1.10 2011/11/04 12:21:37 gap Exp $
 ##
 #Y 2006
 ##
@@ -13,8 +13,8 @@ SetPackageInfo( rec(
 
 PackageName := "RadiRoot",
 Subtitle := "Roots of a Polynomial as Radicals",
-Version := "2.5",
-Date := "27/10/2010",
+Version := "2.6",
+Date := "04/11/2011",
 
 ArchiveURL := Concatenation([
 "http://www.icm.tu-bs.de/ag_algebra/software/radiroot/radiroot-",
