@@ -5,7 +5,7 @@
 ##
 ##  Installation file for the main function of the RADIROOT package
 ##
-#H  @(#)$Id: Radicals.gi,v 1.2 2006/10/30 13:51:30 gap Exp $
+#H  @(#)$Id: Radicals.gi,v 1.3 2006/11/24 15:04:18 gap Exp $
 ##
 #Y  2006
 ##
@@ -27,7 +27,8 @@ InstallGlobalFunction( RR_RootOfUnity, function( erw, ord )
     m := 1;
     for i in DuplicateFreeList( Factors( ord ) ) do
         # first factor of the i-th cyclotomic polynomial in H
-        faktor:=FactorsPolynomialKant(erw.H,CyclotomicPolynomial(Rationals,i))[1];
+        faktor:=FactorsPolynomialAlgExt(erw.H,
+                                        CyclotomicPolynomial(Rationals,i))[1];
         Info( InfoRadiroot, 3,"        Cyclotomic polynomial factor: ",
                               faktor );
 
@@ -115,7 +116,7 @@ InstallMethod( RootsAsMatrices, "rational polynomials",
         if Length( roots ) < Degree( f ) - 1 then
             erw := rec( H := SplittingField( f ), K := L );
             roots:=RR_Roots([[],roots, 
-                             List(FactorsPolynomialKant(SplittingField(f), f),
+                             List(FactorsPolynomialAlgExt(SplittingField(f),f),
                                   faktor -> -Value( faktor, 0 ) )], 
                             erw);;
         fi;

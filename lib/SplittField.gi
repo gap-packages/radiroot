@@ -5,7 +5,7 @@
 ##
 ##  Installs the functions to compute the splitting field of a polynomial
 ##
-#H  $Id: SplittField.gi,v 1.2 2006/10/30 13:51:30 gap Exp $
+#H  $Id: SplittField.gi,v 1.3 2006/11/24 15:04:18 gap Exp $
 ##
 #Y  2006
 ##
@@ -212,7 +212,7 @@ InstallGlobalFunction( RR_Zerfaellungskoerper, function( poly, erw )
     while Length(erw.roots) + Length(roots) + 1 < Degree(poly) do
 	
         # factors <poly> over the latest <erw.H>	
-	faktoren := FactorsPolynomialKant( erw.H, poly );;
+	faktoren := FactorsPolynomialAlgExt( erw.H, poly );;
 	Info( InfoRadiroot, 4, "    Factorization of polynomial:\n",
               faktoren );
     	f := faktoren[ Length( faktoren ) ];
