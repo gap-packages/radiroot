@@ -1,4 +1,5 @@
 \chapcontents {1}{Introduction}{3}
+\seccontents {1.1}{License} {3}
 \chapcontents {2}{Functionality of the Package}{4}
 \seccontents {2.1}{Methods for Rational Polynomials} {4}
 \seccontents {2.2}{Solving a Polynomial by Radicals} {5}

@@ -1,7 +1,9 @@
 radiroot/init.g
+radiroot/CHANGES
 radiroot/read.g
 radiroot/README
 radiroot/PackageInfo.g
+radiroot/GPL
 radiroot/doc/manual.bib
 radiroot/doc/manual.tex
 radiroot/doc/install.tex

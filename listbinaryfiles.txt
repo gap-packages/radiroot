@@ -1,5 +1,4 @@
 radiroot/doc/manual.pdf
-radiroot/doc/manual.log
 radiroot/doc/manual.toc
 radiroot/doc/make_doc
 radiroot/doc/manual.mst

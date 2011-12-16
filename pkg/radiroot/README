@@ -15,8 +15,15 @@ Requirements:
 ------------
 
 The package is written for GAP version 4.4. It requires the package 'Alnuth'
-in version 2.2.0 and can therefore be used on a UNIX system only.
+in version 2.2.2 and can therefore be used on a UNIX system only.
 Beside this the external programms 'LaTeX' and 'xdvi' are recommended.
+
+License:
+--------
+
+The 'RadiRoot' package is free software and can be redistributed and/or
+modified under the terms of the GNU General Public License.
+For details see the file GPL.
 
 Installation:
 ------------

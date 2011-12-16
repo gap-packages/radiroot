@@ -1,13 +1,15 @@
 \makelabel{radiroot:Introduction}{1}
+\makelabel{radiroot:License}{1.1}
 \makelabel{radiroot:Functionality of the Package}{2}
 \makelabel{radiroot:Methods for Rational Polynomials}{2.1}
 \makelabel{radiroot:IsSeparablePolynomial}{2.1.1}
 \makelabel{radiroot:IsSolvable}{2.1.2}
 \makelabel{radiroot:IsSolvablePolynomial}{2.1.2}
 \makelabel{radiroot:SplittingField}{2.1.3}
-\makelabel{radiroot:IsomorphismMatrixField}{2.1.4}
-\makelabel{radiroot:RootsAsMatrices}{2.1.5}
-\makelabel{radiroot:GaloisGroupOnRoots}{2.1.6}
+\makelabel{radiroot:IsomorphicMatrixField}{2.1.3}
+\makelabel{radiroot:RootsAsMatrices}{2.1.3}
+\makelabel{radiroot:IsomorphismMatrixField}{2.1.3}
+\makelabel{radiroot:GaloisGroupOnRoots}{2.1.4}
 \makelabel{radiroot:Solving a Polynomial by Radicals}{2.2}
 \makelabel{radiroot:RootsOfPolynomialAsRadicals}{2.2.1}
 \makelabel{radiroot:RootsOfPolynomialAsRadicalsNC}{2.2.2}
