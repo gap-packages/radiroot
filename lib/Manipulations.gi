@@ -7,7 +7,7 @@
 ##  to special elements of a splitting field and to the permutations
 ##  in its Galois group   
 ##
-#H  $Id: Manipulations.gi,v 1.3 2011/10/27 18:23:30 gap Exp $
+#H  $Id$
 ##
 #Y  2006
 ##
@@ -170,17 +170,20 @@ end );
 
 #############################################################################
 ##
-#F  RR_Potfree( <rat>, <exp> )
+#F  RR_Potfree( <rats>, <exp> )
 ##
-##  Computes the smallest integer <rat> * q^<exp> with q in the rationals and
-##  returns q
+##  Computes <num>/<den> where <num> and <den> are the largest integers such 
+##  that <num>^<exp> resp. <den>)^<exp> occur as factor the nominator resp. 
+##  denominator of every rational number in the list <rats> 
 ##  
-InstallGlobalFunction( RR_Potfree, function( rat, exp )
+InstallGlobalFunction( RR_Potfree, function( rats, exp )
     local num, den;
 
-    num := Product( Collected( Factors( AbsInt( NumeratorRat( rat )))),
+    num := Gcd(List(rats, NumeratorRat));
+    den := Gcd(List(Filtered(rats, x-> x<>0), DenominatorRat));
+    num := Product( Collected( Factors( num )),
                     pe -> pe[1]^( exp * (QuoInt( pe[2], exp ) ) ) );
-    den := Product( Collected( Factors( AbsInt( DenominatorRat( rat )))),
+    den := Product( Collected( Factors( den )),
                     pe -> pe[1]^( exp * (QuoInt( pe[2], exp ) ) ) );
 
     return Root( num, exp ) / Root( den, exp );
@@ -251,7 +254,7 @@ InstallGlobalFunction( RR_CyclicElements, function( erw, compser )
         od;
         potelm := elements[i-1]^n;;
         if IsDiagonalMat( potelm ) and IsRat( potelm[1][1] ) then
-            elements[i-1] := elements[i-1] / RR_Potfree( potelm[1][1], n );
+            elements[i-1] := elements[i-1] / RR_Potfree( [ potelm[1][1] ], n );
         fi;
         elements[i-1] := [elements[i-1], n];
         if i <> Length(compser)-1 then
@@ -269,7 +272,7 @@ InstallGlobalFunction( RR_CyclicElements, function( erw, compser )
     if i = 2 then
         potelm := elements[i-1]^n;
         if IsDiagonalMat( potelm ) and IsRat( potelm[1][1] ) then
-            elements[i-1] := elements[i-1] / RR_Potfree( potelm[1][1], n );
+            elements[i-1] := elements[i-1] / RR_Potfree( [ potelm[1][1] ], n );
         fi;
     fi;
     elements[i-1] := [elements[i-1], n];

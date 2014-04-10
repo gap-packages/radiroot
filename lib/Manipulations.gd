@@ -7,7 +7,7 @@
 ##  to special elements of a splitting field and to the permutations
 ##  in its Galois-group   
 ##
-#H  $Id: Manipulations.gd,v 1.2 2006/10/30 13:51:30 gap Exp $
+#H  $Id$
 ##
 #Y  2006
 ##

@@ -5,7 +5,7 @@
 ##
 ##  Installation file for the main function of the RADIROOT package
 ##
-#H  @(#)$Id: Radicals.gi,v 1.6 2011/10/27 18:23:30 gap Exp $
+#H  @(#)$Id$
 ##
 #Y  2006
 ##
@@ -364,7 +364,7 @@ InstallGlobalFunction( RootsOfPolynomialAsRadicalsNC, function( arg )
         file := "Nst";
     fi;
     if mode <> "maple" then
-        if IsExistingFile( Concatenation( file, ".tex" ) ) then
+        if 3 = Length(arg) and IsExistingFile(Concatenation(file, ".tex")) then
             Error( file, ".tex already exists" );
         fi;
         path := RR_TexFile( f, erw, erw.K!.cyclics, dir, 
@@ -373,7 +373,7 @@ InstallGlobalFunction( RootsOfPolynomialAsRadicalsNC, function( arg )
             RR_Display( file, dir );
         fi;
     else
-        if IsExistingFile( file ) then
+        if 3 = Length(arg) and IsExistingFile(file) then
             Error( file, " already exists" );
         fi;
         path := RR_MapleFile( f, erw, erw.K!.cyclics, Filename(dir,file));

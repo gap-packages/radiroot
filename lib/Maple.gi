@@ -5,7 +5,7 @@
 ##
 ##  Installation file for the functions that generate Maple expressions
 ##
-#H  $Id: Maple.gi,v 1.2 2006/10/30 13:51:30 gap Exp $
+#H  $Id$
 ##
 #Y  2006
 ##
@@ -20,7 +20,7 @@
 ##  for the basis as well 
 ##
 InstallGlobalFunction( RR_M_Radikalbasis, function( erw, elements, file )
-    local k, basis, elm, mat, i, ll, basstr, elmstr, m;
+    local k, basis, elm, mat, i, ll, basstr, elmstr, m, coeffs, scale;
 
     k := DegreeOverPrimeField(erw.K) / Product(erw.degs);
     basis := Basis(erw.K){[ 1..k ]};
@@ -29,7 +29,7 @@ InstallGlobalFunction( RR_M_Radikalbasis, function( erw, elements, file )
     else
         basstr := ["",Concatenation("E(",String(Order(erw.unity)),")")];
     fi;
-    for i in [ 3..k ] do
+    for i in [ 2..k-1 ] do
         Add( basstr, Concatenation( basstr[2], "^", String(i) ) );
     od;
 
@@ -37,8 +37,10 @@ InstallGlobalFunction( RR_M_Radikalbasis, function( erw, elements, file )
         mat := List( basis, Flat );;
         elm := elements[m][1];
         k := elements[m][2];
-        elmstr := RR_M_WurzelAlsString( k,SolutionMat(mat, Flat(elm^k)), 
-                                      basstr );
+        coeffs := SolutionMat(mat, Flat(elm^k));
+        scale := RR_Potfree(Concatenation(List(coeffs, ExtRepOfObj)), k);
+        elm := elm / scale; elements[m][1] := elm;
+        elmstr := RR_WurzelAlsString( k, coeffs / scale^k, basstr );
         AppendTo( file, "w", String(m)," := ", elmstr, ";\n");
         basis := Concatenation( List( [1..k], i -> elm^(i-1) * basis));;
         ll := [ basstr, List( basstr, str -> 
