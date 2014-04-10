@@ -5,7 +5,7 @@
 ##
 ##  Declaration file for main function of the RADIROOT package
 ##
-#H  @(#)$Id: Radicals.gd,v 1.2 2006/10/30 13:51:30 gap Exp $
+#H  @(#)$Id$
 ##
 #Y  2006
 ##

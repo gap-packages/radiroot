@@ -4,7 +4,7 @@
 ##
 ## The init file for the RADIROOT package
 ##
-#H $Id: init.g,v 1.1 2006/10/13 17:13:59 gap Exp $
+#H $Id$
 ##
 #Y 2005
 ##

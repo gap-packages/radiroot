@@ -3,7 +3,7 @@
 ##
 #W  make_doc         make Radiroot Package documentation      Andreas Distler
 ##
-#H  $Id: make_doc,v 1.1 2006/10/13 17:27:21 gap Exp $
+#H  $Id$
 ##
 ##  This shell script uses TeX, BibTeX and MakeIndex to build the .dvi, Adobe
 ##  PDF, PostScript (commented out) and  HTML  (provided  you  have  tth  and

@@ -5,7 +5,7 @@
 ##
 ##  Declares the functions to compute the splitting field of a polynomial
 ##
-#H  $Id: SplittField.gd,v 1.2 2006/10/30 13:51:30 gap Exp $
+#H  $Id$
 ##
 #Y  2006
 ##

@@ -4,7 +4,7 @@
 ##
 ## The package info file for the RadiRoot package
 ##
-#H $Id: PackageInfo.g,v 1.10 2011/11/04 12:21:37 gap Exp $
+#H $Id$
 ##
 #Y 2006
 ##
@@ -13,8 +13,8 @@ SetPackageInfo( rec(
 
 PackageName := "RadiRoot",
 Subtitle := "Roots of a Polynomial as Radicals",
-Version := "2.6",
-Date := "04/11/2011",
+Version := "2.7",
+Date := "09/04/2014",
 
 ArchiveURL := Concatenation([
 "http://www.icm.tu-bs.de/ag_algebra/software/radiroot/radiroot-",
@@ -31,12 +31,11 @@ Persons := [
       IsMaintainer  := true,
       Email         := "a.distler@tu-bs.de",
       PostalAddress := Concatenation( [
-            "CAUL (Centro de Álgebra da Universidade de Lisboa)\n",
-            "Av. Prof. Gama Pinto, 2\n",
-            "1649-003 Lisboa\n",
-            "Portugal" ] ),
-      Place         := "Lisboa",
-      Institution   := "Centro de Álgebra da Universidade de Lisboa")
+                       "AG Algebra und Diskrete Mathematik\n", 
+                       "TU Braunschweig\n", "Rebenring 31 (A14)\n",
+                       "38106 Braunschweig\n", "Germany"] ),
+      Place         := "Braunschweig",
+      Institution   := "Technische Universität Braunschweig")
     ],
 
 Status := "accepted",

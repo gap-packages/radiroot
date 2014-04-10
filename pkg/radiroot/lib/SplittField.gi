@@ -5,7 +5,7 @@
 ##
 ##  Installs the functions to compute the splitting field of a polynomial
 ##
-#H  $Id: SplittField.gi,v 1.5 2011/10/27 18:23:30 gap Exp $
+#H  $Id$
 ##
 #Y  2006
 ##
