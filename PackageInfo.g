@@ -4,8 +4,6 @@
 ##
 ## The package info file for the RadiRoot package
 ##
-#H $Id$
-##
 #Y 2006
 ##
 

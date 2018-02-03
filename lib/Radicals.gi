@@ -5,8 +5,6 @@
 ##
 ##  Installation file for the main function of the RADIROOT package
 ##
-#H  @(#)$Id$
-##
 #Y  2006
 ##
 

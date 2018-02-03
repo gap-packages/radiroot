@@ -5,8 +5,6 @@
 ##
 ##  Declares the functions to compute the splitting field of a polynomial
 ##
-#H  $Id$
-##
 #Y  2006
 ##
 

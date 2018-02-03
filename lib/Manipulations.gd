@@ -7,8 +7,6 @@
 ##  to special elements of a splitting field and to the permutations
 ##  in its Galois-group   
 ##
-#H  $Id$
-##
 #Y  2006
 ##
 

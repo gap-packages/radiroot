@@ -4,8 +4,6 @@
 ##
 ## The init file for the RADIROOT package
 ##
-#H $Id$
-##
 #Y 2005
 ##
 
