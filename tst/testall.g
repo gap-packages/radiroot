@@ -1,4 +1,3 @@
-LoadPackage( "radiroot" );
+LoadPackage("radiroot");
 dirs := DirectoriesPackageLibrary( "radiroot", "tst" );
-ReadTest( Filename( dirs, "docexmpl.tst" ) );
-ReadTest( Filename( dirs, "trivial.tst" ) );
+TestDirectory(dirs, rec(exitGAP := true, rewriteToFile:=true));

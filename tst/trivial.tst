@@ -33,23 +33,3 @@ Group([ (2,3), (1,2) ])
 gap> SplittingField(f);
 <algebraic extension over the Rationals of degree 6>
 gap> STOP_TEST( "docexmpl.tst", 100000);   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
