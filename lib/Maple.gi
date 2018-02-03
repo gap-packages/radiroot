@@ -5,8 +5,6 @@
 ##
 ##  Installation file for the functions that generate Maple expressions
 ##
-#H  $Id$
-##
 #Y  2006
 ##
 

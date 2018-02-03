@@ -5,8 +5,6 @@
 ##
 ##  Declaration file for main function of the RADIROOT package
 ##
-#H  @(#)$Id$
-##
 #Y  2006
 ##
 

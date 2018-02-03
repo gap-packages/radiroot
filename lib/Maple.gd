@@ -5,8 +5,6 @@
 ##
 ##  Declaration file for the functions that generate maple-strings
 ##
-#H  $Id$
-##
 #Y  2006
 ##
 
