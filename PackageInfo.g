@@ -1,102 +1,121 @@
 #############################################################################
 ##  
-##  Demo PackageInfo.g for the GitHubPagesForGAP
+#W PackageInfo.g               RadiRoot package               Andreas Distler
+##
+## The package info file for the RadiRoot package
+##
+#Y 2006
 ##
 
 SetPackageInfo( rec(
 
-PackageName := "GitHubPagesForGAP",
+PackageName := "RadiRoot",
+Subtitle := "Roots of a Polynomial as Radicals",
+Version := "2.7",
+Date := "09/04/2014",
 
-Subtitle := "A GitHub Pages generator for GAP packages",
-Version := "0.2",
-Date := "04/02/2017", # dd/mm/yyyy format
+ArchiveURL := Concatenation([
+"http://www.icm.tu-bs.de/ag_algebra/software/radiroot/radiroot-",
+~.Version]),
+ArchiveFormats := ".tar.gz",
+
+BinaryFiles := ["doc/manual.pdf"],
 
 Persons := [
   rec(
-    LastName      := "Horn",
-    FirstNames    := "Max",
-    IsAuthor      := true,
-    IsMaintainer  := true,
-    Email         := "max.horn@math.uni-giessen.de",
-    WWWHome       := "http://www.quendi.de/math",
-    PostalAddress := Concatenation(
-                       "AG Algebra\n",
-                       "Mathematisches Institut\n",
-                       "Justus-Liebig-Universität Gießen\n",
-                       "Arndtstraße 2\n",
-                       "35392 Gießen\n",
-                       "Germany" ),
-    Place         := "Gießen",
-    Institution   := "Justus-Liebig-Universität Gießen"
-  ),
+      LastName      := "Distler",
+      FirstNames    := "Andreas",
+      IsAuthor      := true,
+      IsMaintainer  := true,
+      Email         := "a.distler@tu-bs.de",
+      PostalAddress := Concatenation( [
+                       "AG Algebra und Diskrete Mathematik\n", 
+                       "TU Braunschweig\n", "Rebenring 31 (A14)\n",
+                       "38106 Braunschweig\n", "Germany"] ),
+      Place         := "Braunschweig",
+      Institution   := "Technische Universität Braunschweig")
+    ],
 
-  rec(
-    LastName      := "Thor",
-    FirstNames    := "A. U.",
-    IsAuthor      := true,
-    IsMaintainer  := false,
-    #Email         := "author@example.com",
-  ),
+Status := "accepted",
+CommunicatedBy := "Edmund Robertson (St Andrews)",
+AcceptDate := "02/2007",
 
-  rec(
-    LastName      := "Itor",
-    FirstNames    := "Jan",
-    IsAuthor      := false,
-    IsMaintainer  := true,
-    #Email         := "janitor@example.com",
-  ),
-],
+README_URL := "http://www.icm.tu-bs.de/ag_algebra/software/radiroot/README",
+PackageInfoURL := "http://www.icm.tu-bs.de/ag_algebra/software/radiroot/PackageInfo.g",
 
-Status := "other",
-
-# The following are not strictly necessary in your own PackageInfo.g
-# (in the sense that update.g only looks at the usual fields
-# like PackageWWWHome, ArchiveURL etc.). But they are convenient
-# if you use exactly the scheme for your package website that we propose.
-GithubUser := "gap-system",
-GithubRepository := ~.PackageName,
-GithubWWW := Concatenation("https://github.com/", ~.GithubUser, "/", ~.GithubRepository),
-
-PackageWWWHome := Concatenation("https://", ~.GithubUser, ".github.io/", ~.GithubRepository, "/"),
-README_URL     := Concatenation( ~.PackageWWWHome, "README.md" ),
-PackageInfoURL := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
-# The following assumes you are using the Github releases system. If not, adjust
-# it accordingly.
-ArchiveURL     := Concatenation(~.GithubWWW,
-                    "/releases/download/v", ~.Version, "/",
-                    ~.GithubRepository, "-", ~.Version),
-
-ArchiveFormats := ".tar.gz .tar.bz2",
-
+##  Here you  must provide a short abstract explaining the package content 
+##  in HTML format (used on the package overview Web page) and an URL 
+##  for a Webpage with more detailed information about the package
+##  (not more than a few lines, less is ok):
+##  Please, use '<span class="pkgname">GAP</span>' and
+##  '<span class="pkgname">MyPKG</span>' for specifing package names.
+##  
 AbstractHTML := 
-  "This is a pseudo package that contains no actual\
-  <span class=\"pkgname\">GAP</span> code. Instead, it is a template for other\
-  GAP packages that allows to quickly setup GitHub Pages.",
+  "The <span class=\"pkgname\">RadiRoot</span> package installs a method to \
+   display the roots of a rational polynomial as radicals if it is solvable.",
 
+PackageWWWHome := "http://www.icm.tu-bs.de/ag_algebra/software/radiroot/",
+                  
+##  On the GAP Website there is an online version of all manuals in the
+##  GAP distribution. To handle the documentation of a package it is
+##  necessary to have:
+##     - an archive containing the package documentation (in at least one 
+##       of HTML or PDF-format, preferably both formats)
+##     - the start file of the HTML documentation (if provided), *relative to
+##       package root*
+##     - the PDF-file (if provided) *relative to the package root*
+##  For links to other package manuals or the GAP manuals one can assume 
+##  relative paths as in a standard GAP installation. 
+##  Also, provide the information about autoloadability of the documentation.
+##  
+##  Please, do not include unnecessary files (.log, .aux, .dvi, .ps, ...) in
+##  the provided documentation archive.
+##  
+# in case of several help books give a list of such records here:
 PackageDoc := rec(
-  BookName  := "GitHubPagesForGAP",
-  ArchiveURLSubset := ["doc"],
-  HTMLStart := "doc/chap0.html",
+  # use same as in GAP            
+  BookName  := "RadiRoot",
+  ArchiveURLSubset := ["doc", "htm"],
+  HTMLStart := "htm/chapters.htm",
   PDFFile   := "doc/manual.pdf",
+  # the path to the .six file used by GAPs help system
   SixFile   := "doc/manual.six",
-  LongTitle := "A GitHub Pages generator for GAP packages",
+  # a longer title of the book, this together with the book name should
+  # fit on a single text line (appears with the '?books' command in GAP)
+  LongTitle := "Roots of a Polynomial as Radicals",
+  # Should this help book be autoloaded when GAP starts up? This should
+  # usually be 'true', otherwise say 'false'. 
+  Autoload  := true
 ),
 
-# The following dependencies are fake and for testing / demo purposes
+
+##  Are there restrictions on the operating system for this package? Or does
+##  the package need other packages to be available?
 Dependencies := rec(
-  GAP := ">=4.8.1",
-  NeededOtherPackages := [
-    ["GAPDoc", ">= 1.2"],
-    ["IO", ">= 4.1"],
-  ],
-  SuggestedOtherPackages := [["orb", ">= 4.2"]],
-  ExternalConditions := []
+  GAP := ">=4.4",
+  NeededOtherPackages := [[ "Alnuth", ">=2.2.3" ]],
+  SuggestedOtherPackages := [],
+  ExternalConditions := ["latex and the dvi-viewer xdvi are recommended"]
 ),
 
 AvailabilityTest := ReturnTrue,
+Autoload := false,
 
-Keywords := ["GitHub Pages", "GAP"]
+BannerString := Concatenation(ListWithIdenticalEntries(SizeScreen()[1]-3, '-'),
+  "\nLoading ", ~.PackageName, " ", ~.Version, " (", ~.Subtitle, ")\nby ",
+  ~.Persons[1].FirstNames, " ", ~.Persons[1].LastName, " (",
+  ~.Persons[1].Email, ")\n",
+  ListWithIdenticalEntries(SizeScreen()[1]-3, '-'), "\n" ),
+
+##  *Optional*, but recommended: path relative to package root to a file which 
+##  contains as many tests of the package functionality as sensible.
+TestFile := "tst/testall.g",
+
+Keywords := ["roots", "radicals"]
 
 ));
 
 
+#############################################################################
+##
+#E

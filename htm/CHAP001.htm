@@ -1,0 +1,72 @@
+<html><head><title>[Radiroot] 1 Introduction</title></head>
+<body text="#000000" bgcolor="#ffffff">
+[<a href = "chapters.htm">Up</a>] [<a href ="CHAP002.htm">Next</a>] [<a href = "theindex.htm">Index</a>]
+<h1>1 Introduction</h1><p>
+<P>
+<H3>Sections</H3>
+<oL>
+<li> <A HREF="CHAP001.htm#SECT001">License</a>
+</ol><p>
+<p>
+This package provides functionality to deal with one of the fundamental
+problems in algebra. The roots of a rational polynomial shall be
+expressed by radicals. This means one is only allowed to use the four
+basic operations (+, &#8722;, &#183;&nbsp;,&#247;) and to extract roots. For
+example, a radical expression for the roots of the polynomial <i>x</i><sup>4</sup> &#8722; <i>x</i><sup>3</sup> &#8722; <i>x</i><sup>2</sup> + <i>x</i> + 1 is 
+<br clear="all" /><table border="0" width="100%"><tr><td><table align="center" cellspacing="0"  cellpadding="2"><tr><td nowrap="nowrap" align="center"> </td><td nowrap="nowrap"><table border="0" align="left" cellspacing="0" cellpadding="0"><tr><td nowrap="nowrap" align="center"><table><tr><td nowrap="nowrap" align="center" colspan="1"> </td><td nowrap="nowrap" align="center">1<div class="hrcomp"><hr noshade="noshade" size="1"/></div>4<br /></td><td nowrap="nowrap" align="center">+ </td><td nowrap="nowrap" align="center">1<div class="hrcomp"><hr noshade="noshade" size="1"/></div>4<br /></td><td nowrap="nowrap" align="center"></td><td align="left" class="cl"><br /><font size="+2">&#8730;</font><br /><div class="comb">&nbsp;</div></td><td nowrap="nowrap" align="center"><div class="hrcomp"><hr noshade="noshade" size="1"/></div><div class="norm">&#8722;3<br /></div><div class="comb">&nbsp;</div></td><td nowrap="nowrap" align="center"> + </td><td nowrap="nowrap" align="center">1<div class="hrcomp"><hr noshade="noshade" size="1"/></div>2<br /></td><td nowrap="nowrap" align="center"></td><td align="left" class="cl"><font size="+2">&nbsp;&nbsp;&#x239B;<br />&#8730;<br /></font></td><td nowrap="nowrap" align="center"><div class="hrcomp"><hr noshade="noshade" size="1"/></div><div class="norm"><table border="0" cellspacing="0" cellpadding="0"><tr><td nowrap="nowrap" align="center">7<div class="hrcomp"><hr noshade="noshade" size="1"/></div>2<br /></td><td nowrap="nowrap" align="center">+ </td><td nowrap="nowrap" align="center">1<div class="hrcomp"><hr noshade="noshade" size="1"/></div>2<br /></td><td nowrap="nowrap" align="center"></td><td align="left" class="cl"><br /><font size="+2">&#8730;</font><br /><div class="comb">&nbsp;</div></td><td nowrap="nowrap" align="center"><div class="hrcomp"><hr noshade="noshade" size="1"/></div><div class="norm">&#8722;3<br /></div><div class="comb">&nbsp;</div></td></tr></table></div><div class="comb">&nbsp;</div></td><td nowrap="nowrap" align="center">&#183;</td></tr></table></td></tr></table></td><td nowrap="nowrap"> </td></tr></table></td></tr></table>
+<p>
+There are formulas to solve the general equation <i>x</i><sup><i>n</i></sup>+ <i>a</i><sub><i>n</i>&#8722;1</sub><i>x</i><sup><i>n</i>&#8722;1</sup>+ ... + <i>a</i><sub>1</sub><i>x</i>+<i>a</i><sub>0</sub> = 0 up to degree 4. For higher
+degrees such formulae do not exist (<a href="biblio.htm#Abel26"><cite>Abel26</cite></a>). It was &Eacute;variste Galois
+(1811 -- 1832) who discovered that there exists a radical expression
+for the roots if and only if the Galois group of the polynomial - initially a
+permutation group on the roots - is solvable <a href="biblio.htm#Galois97"><cite>Galois97</cite></a>. But the task
+itself was impractical in his days. This package is the first public tool
+which provides a practical method for solving a polynomial algebraically. The
+implementation is based on Galois' ideas and the algorithm is described in
+<a href="biblio.htm#Distler05"><cite>Distler05</cite></a>. 
+<p>
+The package can provide the result in various forms. As a default an
+expression is given in a similar way as in the example
+above. Alternatively, a file containing the roots might be created
+which is readable by Maple <a href="biblio.htm#Maple10"><cite>Maple10</cite></a>. In <font face="Gill Sans,Helvetica,Arial">GAP</font> itself some
+information deduced during the computation is available.
+<p>
+The user should be aware that radical expressions can get very complicated
+even for polynomials of small degree. Especially because the algorithm
+will find an irreducible radical expression. That means one gets a
+root of the given polynomial for every choice of a value of the radicals in
+the expression. Moreover it is not the aim of this package to give a
+simplest expression, in any sense.
+<p>
+In Chapter 2 the methods provided by this package are listed and
+explained.
+<p>
+Chapter 3 gives details about the info class of this package. See
+Section <a href="../../../doc/ref/chap7.html#X7A9C902479CB6F7C">Info Functions</a> in the <font face="Gill Sans,Helvetica,Arial">GAP</font> reference manual for
+general information about info classes.
+<p>
+While the installation of the package follows standard <font face="Gill Sans,Helvetica,Arial">GAP</font> rules
+the Chapter 4 contains information about external programs required by
+<font face="Gill Sans,Helvetica,Arial">Radiroot</font> in its default setup.
+<p>
+This package uses the interface in the package <font face="Gill Sans,Helvetica,Arial">Alnuth</font>, to
+factorise polynomials over algebraic number fields. This functionality must
+be available to use the functions in <font face="Gill Sans,Helvetica,Arial">Radiroot</font>.  
+<p>
+<p>
+<h2><a name="SECT001">1.1 License</a></h2>
+<p><p>
+This package is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; version 2 of the License.
+<p>
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details.
+<p>
+<p>
+[<a href = "chapters.htm">Up</a>] [<a href ="CHAP002.htm">Next</a>] [<a href = "theindex.htm">Index</a>]
+<P>
+<address>Radiroot manual<br>February 2018
+</address></body></html>

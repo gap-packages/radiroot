@@ -1,0 +1,43 @@
+<html><head><title>[Radiroot] 3 The Info Class of the Package</title></head>
+<body text="#000000" bgcolor="#ffffff">
+[<a href = "chapters.htm">Up</a>] [<a href ="CHAP002.htm">Previous</a>] [<a href ="CHAP004.htm">Next</a>] [<a href = "theindex.htm">Index</a>]
+<h1>3 The Info Class of the Package</h1><p>
+<p>
+The <code>info</code> mechanism in <font face="Gill Sans,Helvetica,Arial">GAP</font> allows functions to print information
+during the computation (see Section <a href="../../../doc/ref/chap7.html#X7A9C902479CB6F7C">Info Functions</a> in the
+<font face="Gill Sans,Helvetica,Arial">GAP</font> reference manual for general information).
+<p>
+<a name = ""></a>
+<li><code>InfoRadiroot V</code>
+<p>
+is the info class of this package.
+<p>
+<a name = ""></a>
+<li><code>SetInfoLevel( InfoRadiroot, </code><var>level</var><code> )</code>
+<p>
+sets the info level for <code>InfoRadiroot</code> to <var>level</var>, where <var>level</var> has
+to be an integer in the range 0-4.
+<p>
+The default value for <code>InfoRadiroot</code> is 1. Information why a function
+returns <code>fail</code> will be given with this setting.
+<pre>
+gap&gt; InfoLevel(InfoRadiroot);
+1
+gap&gt; RootsOfPolynomialAsRadicals(x^5-4*x+2);
+#I  Polynomial is not solvable.
+fail
+</pre>
+<p>
+Setting the info level to a higher value will cause messages to show up during
+single steps of the computation. On level 2 one gets a rough
+overview. Those who want to go into the details of the algorithm
+described in <a href="biblio.htm#Distler05"><cite>Distler05</cite></a> and of the implementation itself will
+find the information on level 3-4 helpful.
+<p>
+To use the package in silent mode the info level can be given the
+value 0.
+<p>
+[<a href = "chapters.htm">Up</a>] [<a href ="CHAP002.htm">Previous</a>] [<a href ="CHAP004.htm">Next</a>] [<a href = "theindex.htm">Index</a>]
+<P>
+<address>Radiroot manual<br>February 2018
+</address></body></html>

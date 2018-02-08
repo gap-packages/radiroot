@@ -1,48 +1,35 @@
-name: GitHubPagesForGAP
-version: 0.2
-date: 04/02/2017
+name: RadiRoot
+version: 2.7
+date: 09/04/2014
 description: |
-    A GitHub Pages generator for GAP packages
+    Roots of a Polynomial as Radicals
 
 authors:
-    - name: Max Horn
-      url: http://www.quendi.de/math
-    - name: A. U. Thor
+    - name: Andreas Distler
+      url: mailto:a.distler@tu-bs.de
 
 maintainers:
-    - name: Max Horn
-      url: http://www.quendi.de/math
-    - name: Jan Itor
+    - name: Andreas Distler
+      url: mailto:a.distler@tu-bs.de
 
-GAP: ">=4.8.1"
+GAP: ">=4.4"
 
 needed-pkgs:
-    - name: "GAPDoc"
-      version: ">= 1.2"
-      url: "http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc"
-    - name: "IO"
-      version: ">= 4.1"
-      url: "https://gap-packages.github.io/io"
+    - name: "Alnuth"
+      version: ">=2.2.3"
+      url: "https://gap-packages.github.io/alnuth"
 
-suggested-pkgs:
-    - name: "orb"
-      version: ">= 4.2"
-      url: "https://gap-packages.github.io/orb"
-
-www: https://gap-system.github.io/GitHubPagesForGAP/
-readme: README.md
-packageinfo: https://gap-system.github.io/GitHubPagesForGAP/PackageInfo.g
-github: https://github.com/gap-system/GitHubPagesForGAP
+www: http://www.icm.tu-bs.de/ag_algebra/software/radiroot/
+readme: README
+packageinfo: http://www.icm.tu-bs.de/ag_algebra/software/radiroot/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-system/GitHubPagesForGAP/releases/download/v0.2/GitHubPagesForGAP-0.2.tar.gz
-    - name: .tar.bz2
-      url: https://github.com/gap-system/GitHubPagesForGAP/releases/download/v0.2/GitHubPagesForGAP-0.2.tar.bz2
+      url: http://www.icm.tu-bs.de/ag_algebra/software/radiroot/radiroot-2.7.tar.gz
 
 abstract: |
-    This is a pseudo package that contains no actual  <span class="pkgname">GAP</span> code. Instead, it is a template for other  GAP packages that allows to quickly setup GitHub Pages.
+    The <span class="pkgname">RadiRoot</span> package installs a method to    display the roots of a rational polynomial as radicals if it is solvable.
 
-status: other
-doc-html: doc/chap0.html
+status: accepted
+doc-html: htm/chapters.htm
 doc-pdf: doc/manual.pdf

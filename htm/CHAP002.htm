@@ -1,0 +1,174 @@
+<html><head><title>[Radiroot] 2 Functionality of the Package</title></head>
+<body text="#000000" bgcolor="#ffffff">
+[<a href = "chapters.htm">Up</a>] [<a href ="CHAP001.htm">Previous</a>] [<a href ="CHAP003.htm">Next</a>] [<a href = "theindex.htm">Index</a>]
+<h1>2 Functionality of the Package</h1><p>
+<P>
+<H3>Sections</H3>
+<oL>
+<li> <A HREF="CHAP002.htm#SECT001">Methods for Rational Polynomials</a>
+<li> <A HREF="CHAP002.htm#SECT002">Solving a Polynomial by Radicals</a>
+</ol><p>
+<p>
+<p>
+<h2><a name="SECT001">2.1 Methods for Rational Polynomials</a></h2>
+<p><p>
+<a name = "SSEC001.1"></a>
+<li><code>IsSeparablePolynomial( </code><var>f</var><code> )</code>
+<p>
+returns <code>true</code> if the rational polynomial <var>f</var> has simple roots only
+and <code>false</code> otherwise.
+<p>
+<a name = "SSEC001.2"></a>
+<li><code>IsSolvable( </code><var>f</var><code> )</code>
+<a name = "SSEC001.2"></a>
+<li><code>IsSolvablePolynomial( </code><var>f</var><code> )</code>
+<p>
+returns <code>true</code> if the rational polynomial <var>f</var> has a solvable Galois group and
+<code>false</code> otherwise. It signals an error if there exists an irreducible factor
+with degree greater than 15.
+<p>
+<a name = "SSEC001.3"></a>
+<li><code>SplittingField( </code><var>f</var><code> )</code>
+<a name = "SSEC001.3"></a>
+<li><code>IsomorphicMatrixField( </code><var>F</var><code> )</code>
+<a name = "SSEC001.3"></a>
+<li><code>RootsAsMatrices( </code><var>f</var><code> )</code>
+<a name = "SSEC001.3"></a>
+<li><code>IsomorphismMatrixField( </code><var>F</var><code> )</code>
+<p>
+For a normed, rational polynomial <var>f</var>, <code>SplittingField(</code><var>f</var><code>)</code> returns the
+smallest algebraic extension field <var>L</var> of the rationals containing all
+roots of <var>f</var>. The field is constructed with <code>FieldByPolynomial</code> (see
+Creation of number fields in <font face="Gill Sans,Helvetica,Arial">Alnuth</font>). The primitive element of <var>L</var> is
+denoted by <code>a</code>. A matrix field <var>K</var> isomorphic to <var>L</var> is known after
+the computation and can be accessed using <code>IsomorphicMatrixField(</code><var>L</var><code></code>.
+The matrices, one for each distinct root of <var>f</var>, in the list produced
+by <code>RootsOfMatrices(</code><var>f</var><code>)</code> lie in <var>K</var>. <code>IsomorphismMatrixField( </code><var>L</var><code> )</code>
+returns an isomorphism of <var>L</var> onto <var>K</var>.
+<p>
+<pre>
+gap&gt; x := Indeterminate( Rationals, "x" );;
+gap&gt; f := UnivariatePolynomial( Rationals, [1,3,4,1] );
+x^3+4*x^2+3*x+1
+gap&gt; L := SplittingField( f );
+&lt;algebraic extension over the Rationals of degree 6&gt;
+gap&gt; y := Indeterminate( L, "y" );;
+gap&gt; FactorsPolynomialAlgExt( L, f );
+[ y+(-3/94*a^4-24/47*a^3-253/94*a^2-535/94*a-168/47), 
+  y+(-3/94*a^4-24/47*a^3-253/94*a^2-441/94*a+20/47), 
+  y+(3/47*a^4+48/47*a^3+253/47*a^2+488/47*a+336/47) ]
+gap&gt; IsomorphicMatrixField( L );
+&lt;rational matrix field of degree 6&gt;
+gap&gt; Display(RootsAsMatrices(f)[1]);
+[ [   0,   1,   0,   0,   0,   0 ],
+  [   0,   0,   1,   0,   0,   0 ],
+  [  -1,  -3,  -4,   0,   0,   0 ],
+  [   0,   0,   0,   0,   1,   0 ],
+  [   0,   0,   0,   0,   0,   1 ],
+  [   0,   0,   0,  -1,  -3,  -4 ] ]
+gap&gt; MinimalPolynomial( Rationals, RootsAsMatrices(f)[1]);
+x^3+4*x^2+3*x+1
+gap&gt; iso := IsomorphismMatrixField( L );
+MappingByFunction( &lt;algebraic extension over the Rationals of degree
+6&gt;, &lt;rational matrix field of degree
+6&gt;, function( x ) ... end, function( mat ) ... end )
+gap&gt; PreImages( iso, RootsAsMatrices( f ) );
+[ -3/47*a^4-48/47*a^3-253/47*a^2-488/47*a-336/47, 
+  3/94*a^4+24/47*a^3+253/94*a^2+441/94*a-20/47, 
+  3/94*a^4+24/47*a^3+253/94*a^2+535/94*a+168/47 ]
+</pre>
+To factorise a polynomial over its splitting field one has to use
+<code>FactorsPolynomialAlgExt</code> (see <font face="Gill Sans,Helvetica,Arial">Alnuth</font>) instead of <code>Factors</code>.
+<p>
+<a name = "SSEC001.4"></a>
+<li><code>GaloisGroupOnRoots( </code><var>f</var><code> )</code>
+<p>
+calculates the Galois group <var>G</var> of the rational polynomial <var>f</var>, which
+has to be separable, as a permutation group with respect to the
+ordering of the roots of <var>f</var> given as matrices by <code>RootsAsMatrices</code>.
+<p>
+<pre>
+gap&gt; GaloisGroupOnRoots(f);
+Group([ (2,3), (1,2) ])
+</pre>
+<p>
+If you only want to get the Galois group abstractly, and if <i>f</i> is
+irreducible of degree at most 15, it is often better to use the
+function <code>GaloisType</code> (see Chapter&nbsp;<a href="../../../doc/ref/chap66.html#X7F45E9E47EA2C18B">Polynomials over the Rationals</a> in the <font face="Gill Sans,Helvetica,Arial">GAP</font> reference manual).
+<p>
+<p>
+<h2><a name="SECT002">2.2 Solving a Polynomial by Radicals</a></h2>
+<p><p>
+<a name = "SSEC002.1"></a>
+<li><code>RootsOfPolynomialAsRadicals( </code><var>f</var><code> [, </code><var>mode</var><code> [, </code><var>file</var><code> ] ] )</code>
+<p>
+computes a solution by radicals for the irreducible, rational polynomial <var>f</var>
+up to degree 15 if the Galois group of <var>f</var> is
+solvable, and returns <code>fail</code> otherwise. If it succeeds and <var>mode</var> is
+not <code>off</code>, the function returns the path to a file containing the
+description of the roots of <var>f</var> and generators of cyclic radical
+extensions to produce its splitting field.
+<p>
+The user has several options to specify what happens with the results
+of the computation. Therefore the optional second argument <var>mode</var>, a
+string, can be set to one of the following values:
+<p>
+<pre>
+"dvi"
+</pre>
+Provided <code>latex</code> and the dvi viewer <code>xdvi</code> are available, this option
+will display the irreducible radical expression for the roots and
+cyclic extension generators in a new window. The package uses this
+option as the default.
+<p>
+<pre>
+"latex"
+</pre>
+A LaTeX file is generated which contains the encoding for the
+expression by radicals. This gives the user the opportunity to adjust
+the layout of the individual example before displaying the expression.
+<p>
+<pre>
+"maple"
+</pre>
+The generated file can be read into Maple <a href="biblio.htm#Maple10"><cite>Maple10</cite></a> which makes a root
+of <var>f</var> available as variable <code>a</code>.
+<p>
+<pre>
+"off"
+</pre>
+In this mode the function does not actually compute a radical
+expression but is only called for its side effects. Namely, the
+attributes <code>SplittingField</code>, <code>RootsAsMatrices</code> and
+<code>GaloisGroupOnRoots</code> are known for <var>f</var> afterwards. This is slightly
+more effective than calling the corresponding operations one by one.
+<p>
+With the optional third argument <var>file</var> the user can specify a
+file name under which the description files will be stored in the 
+directory from which <font face="Gill Sans,Helvetica,Arial">GAP</font> was called. Depending on the option for
+<var>mode</var> an extension like <code>.tex</code> might be added automatically. 
+If <var>file</var> is not given, the function places description files in a new
+directory <code>/tmp/tmp.</code><var>string</var> with names such as <code>Nst</code> and <code>Nst.tex</code>;
+the temporary directory is removed at the end of the <font face="Gill Sans,Helvetica,Arial">GAP</font>
+session.
+<p>
+The computation may take a very long time and can get unfeasible if the
+degree of <var>f</var> is greater than 7.
+<pre>
+</pre>
+<p>
+<li><code>RootsOfPolynomialAsRadicalsNC( </code><var>f</var><code> [, </code><var>mode</var><code> [, </code><var>file</var><code> ] ] )</code>
+<p>
+does essentially the same as <code>RootsOfPolynomialAsRadicals</code> except
+that it runs no test on the input before starting the actual
+computation. Therefore it can be used for polynomials with arbitrary
+degree, but it may run for a very long time until a
+non-solvable polynomial is recognized as such.
+<p>
+Detailed examples for these two functions can be found in the next section.
+<p>
+<p>
+[<a href = "chapters.htm">Up</a>] [<a href ="CHAP001.htm">Previous</a>] [<a href ="CHAP003.htm">Next</a>] [<a href = "theindex.htm">Index</a>]
+<P>
+<address>Radiroot manual<br>February 2018
+</address></body></html>
