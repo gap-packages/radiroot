@@ -14,9 +14,17 @@ Subtitle := "Roots of a Polynomial as Radicals",
 Version := "2.7",
 Date := "09/04/2014",
 
-ArchiveURL := Concatenation([
-"http://www.icm.tu-bs.de/ag_algebra/software/radiroot/radiroot-",
-~.Version]),
+PackageWWWHome  := "https://gap-packages.github.io/radiroot/",
+README_URL      := Concatenation( ~.PackageWWWHome, "README" ),
+PackageInfoURL  := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
+SourceRepository := rec(
+    Type := "git",
+    URL := "https://github.com/gap-packages/radiroot",
+),
+IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
+ArchiveURL      := Concatenation( ~.SourceRepository.URL,
+                                 "/releases/download/v", ~.Version,
+                                 "/radiroot-", ~.Version ),
 ArchiveFormats := ".tar.gz",
 
 BinaryFiles := ["doc/manual.pdf"],
