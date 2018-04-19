@@ -4,8 +4,6 @@
 ##
 ## The package info file for the RadiRoot package
 ##
-#Y 2006
-##
 
 SetPackageInfo( rec(
 
@@ -39,8 +37,16 @@ Persons := [
                        "TU Braunschweig\n", "Rebenring 31 (A14)\n",
                        "38106 Braunschweig\n", "Germany"] ),
       Place         := "Braunschweig",
-      Institution   := "Technische Universität Braunschweig")
-    ],
+      Institution   := "Technische Universität Braunschweig"
+  ),
+  rec(
+      LastName      := "GAP Team",
+      FirstNames    := "The",
+      IsAuthor      := false,
+      IsMaintainer  := true,
+      Email         := "support@gap-system.org",
+  ),
+],
 
 Status := "accepted",
 CommunicatedBy := "Edmund Robertson (St Andrews)",
