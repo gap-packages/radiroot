@@ -30,14 +30,8 @@ Persons := [
       LastName      := "Distler",
       FirstNames    := "Andreas",
       IsAuthor      := true,
-      IsMaintainer  := true,
+      IsMaintainer  := false,
       Email         := "a.distler@tu-bs.de",
-      PostalAddress := Concatenation( [
-                       "AG Algebra und Diskrete Mathematik\n", 
-                       "TU Braunschweig\n", "Rebenring 31 (A14)\n",
-                       "38106 Braunschweig\n", "Germany"] ),
-      Place         := "Braunschweig",
-      Institution   := "Technische Universität Braunschweig"
   ),
   rec(
       LastName      := "GAP Team",
