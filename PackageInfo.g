@@ -61,8 +61,8 @@ PackageDoc := rec(
 ),
 
 Dependencies := rec(
-  GAP := ">=4.4",
-  NeededOtherPackages := [[ "Alnuth", ">=2.2.3" ]],
+  GAP := ">=4.7",
+  NeededOtherPackages := [[ "Alnuth", ">=3.0" ]],
   SuggestedOtherPackages := [],
   ExternalConditions := ["latex and the dvi-viewer xdvi are recommended"]
 ),

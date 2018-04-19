@@ -14,9 +14,8 @@ field of a rational polynomial.
 Requirements:
 ------------
 
-The package is written for GAP version 4.4 or higher. It requires the package
-'Alnuth' in version 2.2.3 or higher. Beside this the external programms 'LaTeX'
-and 'xdvi' are recommended.
+The package is written for GAP version 4.7 or higher. It requires the package
+'Alnuth' in version 3.0 or higher.
 
 License:
 --------
