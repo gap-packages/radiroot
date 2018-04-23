@@ -1,6 +1,6 @@
 name: RadiRoot
-version: 2.7
-date: 2014-04-09
+version: 2.8
+date: 2018-04-23
 description: |
     Roots of a Polynomial as Radicals
 
@@ -9,23 +9,23 @@ authors:
       url: mailto:a.distler@tu-bs.de
 
 maintainers:
-    - name: Andreas Distler
-      url: mailto:a.distler@tu-bs.de
+    - name: The GAP Team
+      url: mailto:support@gap-system.org
 
-GAP: ">=4.4"
+GAP: ">=4.7"
 
 needed-pkgs:
     - name: "Alnuth"
-      version: ">=2.2.3"
+      version: ">=3.0"
       url: "https://gap-packages.github.io/alnuth"
 
-www: http://www.icm.tu-bs.de/ag_algebra/software/radiroot/
+www: https://gap-packages.github.io/radiroot/
 readme: README
-packageinfo: http://www.icm.tu-bs.de/ag_algebra/software/radiroot/PackageInfo.g
+packageinfo: https://gap-packages.github.io/radiroot/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: http://www.icm.tu-bs.de/ag_algebra/software/radiroot/radiroot-2.7.tar.gz
+      url: https://github.com/gap-packages/radiroot/releases/download/v2.8/radiroot-2.8.tar.gz
 
 abstract: |
     The <span class="pkgname">RadiRoot</span> package installs a method to    display the roots of a rational polynomial as radicals if it is solvable.
