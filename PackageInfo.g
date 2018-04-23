@@ -9,8 +9,8 @@ SetPackageInfo( rec(
 
 PackageName := "RadiRoot",
 Subtitle := "Roots of a Polynomial as Radicals",
-Version := "2.7",
-Date := "09/04/2014",
+Version := "2.8",
+Date := "23/04/2018",
 
 PackageWWWHome  := "https://gap-packages.github.io/radiroot/",
 README_URL      := Concatenation( ~.PackageWWWHome, "README" ),
