@@ -1,5 +1,6 @@
 name: RadiRoot
-version: 2.9
+version: "2.9"
+license: "GPL-2.0-or-later"
 date: 2022-03-01
 description: |
     Roots of a Polynomial as Radicals
@@ -33,3 +34,31 @@ abstract: |
 status: accepted
 doc-html: htm/chapters.htm
 doc-pdf: doc/manual.pdf
+keywords: |
+    roots, radicals.
+citeas: |
+    <p class='BibEntry'>
+    [<span class='BibKey'>DT22</span>]   <b class='BibAuthor'>Distler, A. and GAP Team, T.</b>,
+     <i class='BibTitle'>RadiRoot, Roots of a Polynomial as Radicals,
+             Version 2.9</i>
+     (<span class='BibYear'>2022</span>)<br />
+    (<span class='BibNote'>Refereed GAP package</span>),
+    <span class='BibHowpublished'><a href="https://gap-packages.github.io/radiroot/">https://gap-packages.github.io/radiroot/</a></span>.
+    </p>
+    
+
+bibtex: |
+    @misc{ RadiRoot2.9,
+      author =           {Distler, A. and GAP Team, T.},
+      title =            {{RadiRoot},   Roots   of  a  Polynomial  as  Radicals,
+                          {V}ersion 2.9},
+      month =            {Mar},
+      year =             {2022},
+      note =             {Refereed GAP package},
+      howpublished =     {\href       {https://gap-packages.github.io/radiroot/}
+                          {\texttt{https://gap-packages.github.io/}\discretionary
+                          {}{}{}\texttt{radiroot/}}},
+      keywords =         {roots; radicals},
+      printedkey =       {DT22}
+    }
+
