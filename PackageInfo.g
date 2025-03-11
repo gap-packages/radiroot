@@ -58,7 +58,6 @@ PackageDoc := rec(
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
   LongTitle := "Roots of a Polynomial as Radicals",
-  Autoload  := true
 ),
 
 Dependencies := rec(
@@ -69,7 +68,6 @@ Dependencies := rec(
 ),
 
 AvailabilityTest := ReturnTrue,
-Autoload := false,
 
 TestFile := "tst/testall.g",
 
