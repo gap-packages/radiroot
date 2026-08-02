@@ -1,0 +1,210 @@
+<!-- W  radiroot.tex          Radiroot documentation          Andreas Distler / Y  2005 -->
+<Chapter Label="Functionality of the Package">
+<Heading>Functionality of the Package</Heading>
+This chapter describes the methods available in the &Radiroot;
+package.
+<Section Label="Methods for Rational Polynomials">
+<Heading>Methods for Rational Polynomials</Heading>
+<ManSection>
+<Prop Name="IsSeparablePolynomial" Arg="f"/>
+<Description>
+returns <K>true</K> if the rational polynomial <A>f</A> has simple roots only
+and <K>false</K> otherwise.
+</Description>
+</ManSection>
+<ManSection>
+<Oper Name="IsSolvable" Arg="f"/>
+<Prop Name="IsSolvablePolynomial" Arg="f"/>
+<Description>
+returns <K>true</K> if the rational polynomial <A>f</A> has a solvable Galois group and
+<K>false</K> otherwise. It signals an error if there exists an irreducible factor
+with degree greater than 15.
+</Description>
+</ManSection>
+<ManSection>
+<Attr Name="SplittingField" Arg="f"/>
+<Func Name="IsomorphicMatrixField" Arg="F"/>
+<Attr Name="RootsAsMatrices" Arg="f"/>
+<Attr Name="IsomorphismMatrixField" Arg="F"/>
+<Description>
+For a normed, rational polynomial <A>f</A>, <C>SplittingField(<A>f</A>)</C> returns the
+smallest algebraic extension field <A>L</A> of the rationals containing all
+roots of <A>f</A>. The field is constructed with <C>FieldByPolynomial</C> (see
+Creation of number fields in &Alnuth;). The primitive element of <A>L</A> is
+denoted by <C>a</C>. A matrix field <A>K</A> isomorphic to <A>L</A> is known after
+the computation and can be accessed using <C>IsomorphicMatrixField(<A>L</A></C>.
+The matrices, one for each distinct root of <A>f</A>, in the list produced
+by <C>RootsOfMatrices(<A>f</A>)</C> lie in <A>K</A>. <C>IsomorphismMatrixField( <A>L</A> )</C>
+returns an isomorphism of <A>L</A> onto <A>K</A>.
+<Example><![CDATA[
+gap> x := Indeterminate( Rationals, "x" );;
+gap> f := UnivariatePolynomial( Rationals, [1,3,4,1] );
+x^3+4*x^2+3*x+1
+gap> L := SplittingField( f );
+<algebraic extension over the Rationals of degree 6>
+gap> y := Indeterminate( L, "y" );;
+gap> FactorsPolynomialAlgExt( L, f );
+[ y+(-3/94*a^4-24/47*a^3-253/94*a^2-535/94*a-168/47), 
+  y+(-3/94*a^4-24/47*a^3-253/94*a^2-441/94*a+20/47), 
+  y+(3/47*a^4+48/47*a^3+253/47*a^2+488/47*a+336/47) ]
+gap> IsomorphicMatrixField( L );
+<rational matrix field of degree 6>
+gap> Display(RootsAsMatrices(f)[1]);
+[ [   0,   1,   0,   0,   0,   0 ],
+  [   0,   0,   1,   0,   0,   0 ],
+  [  -1,  -3,  -4,   0,   0,   0 ],
+  [   0,   0,   0,   0,   1,   0 ],
+  [   0,   0,   0,   0,   0,   1 ],
+  [   0,   0,   0,  -1,  -3,  -4 ] ]
+gap> MinimalPolynomial( Rationals, RootsAsMatrices(f)[1]);
+x^3+4*x^2+3*x+1
+gap> iso := IsomorphismMatrixField( L );
+MappingByFunction( <algebraic extension over the Rationals of degree 
+6>, <rational matrix field of degree 
+6>, function( x ) ... end, function( mat ) ... end )
+gap> PreImages( iso, RootsAsMatrices( f ) );
+[ -3/47*a^4-48/47*a^3-253/47*a^2-488/47*a-336/47, 
+  3/94*a^4+24/47*a^3+253/94*a^2+441/94*a-20/47, 
+  3/94*a^4+24/47*a^3+253/94*a^2+535/94*a+168/47 ]
+]]></Example>
+To factorise a polynomial over its splitting field one has to use
+<C>FactorsPolynomialAlgExt</C> (see &Alnuth;) instead of <C>Factors</C>.
+</Description>
+</ManSection>
+<ManSection>
+<Attr Name="GaloisGroupOnRoots" Arg="f"/>
+<Description>
+calculates the Galois group <A>G</A> of the rational polynomial <A>f</A>, which
+has to be separable, as a permutation group with respect to the
+ordering of the roots of <A>f</A> given as matrices by <C>RootsAsMatrices</C>.
+<Example><![CDATA[
+gap> GaloisGroupOnRoots(f);
+Group([ (2,3), (1,2) ])
+]]></Example>
+If you only want to get the Galois group abstractly, and if <M>f</M> is
+irreducible of degree at most 15, it is often better to use the
+function <C>GaloisType</C> (see Chapter&nbsp;<Ref Sect="Polynomials over the Rationals" BookName="ref"/> in the &GAP; reference manual).
+</Description>
+</ManSection>
+</Section>
+<Section Label="Solving a Polynomial by Radicals">
+<Heading>Solving a Polynomial by Radicals</Heading>
+<ManSection>
+<Func Name="RootsOfPolynomialAsRadicals" Arg="f [, mode [, file ] ]"/>
+<Description>
+computes a solution by radicals for the irreducible, rational polynomial <A>f</A>
+up to degree 15 if the Galois group of <A>f</A> is
+solvable, and returns <K>fail</K> otherwise. If it succeeds and <A>mode</A> is
+not <C>off</C>, the function returns the path to a file containing the
+description of the roots of <A>f</A> and generators of cyclic radical
+extensions to produce its splitting field.
+<P/>
+The user has several options to specify what happens with the results
+of the computation. Therefore the optional second argument <A>mode</A>, a
+string, can be set to one of the following values:
+<Listing><![CDATA[
+"dvi"
+]]></Listing>
+Provided <C>latex</C> and the dvi viewer <C>xdvi</C> are available, this option
+will display the irreducible radical expression for the roots and
+cyclic extension generators in a new window. The package uses this
+option as the default.
+<Listing><![CDATA[
+"latex"
+]]></Listing>
+A LaTeX file is generated which contains the encoding for the
+expression by radicals. This gives the user the opportunity to adjust
+the layout of the individual example before displaying the expression.
+<Listing><![CDATA[
+"maple"
+]]></Listing>
+The generated file can be read into Maple <Cite Key="Maple10"/> which makes a root
+of <A>f</A> available as variable <C>a</C>.
+<Listing><![CDATA[
+"off"
+]]></Listing>
+In this mode the function does not actually compute a radical
+expression but is only called for its side effects. Namely, the
+attributes <C>SplittingField</C>, <C>RootsAsMatrices</C> and
+<C>GaloisGroupOnRoots</C> are known for <A>f</A> afterwards. This is slightly
+more effective than calling the corresponding operations one by one.
+<P/>
+With the optional third argument <A>file</A> the user can specify a
+file name under which the description files will be stored in the 
+directory from which &GAP; was called. Depending on the option for
+<A>mode</A> an extension like <C>.tex</C> might be added automatically. 
+If <A>file</A> is not given, the function places description files in a new
+directory <C>/tmp/tmp.</C><A>string</A> with names such as <C>Nst</C> and <F>Nst.tex</F>;
+the temporary directory is removed at the end of the  GAP
+session.
+<P/>
+The computation may take a very long time and can get unfeasible if the
+degree of <A>f</A> is greater than 7.
+</Description>
+</ManSection>
+<ManSection>
+<Func Name="RootsOfPolynomialAsRadicalsNC" Arg="f [, mode [, file ] ]"/>
+<Description>
+does essentially the same as <C>RootsOfPolynomialAsRadicals</C> except
+that it runs no test on the input before starting the actual
+computation. Therefore it can be used for polynomials with arbitrary
+degree, but it may run for a very long time until a
+non-solvable polynomial is recognized as such.
+<P/>
+Detailed examples for these two functions can be found in the next section.
+</Description>
+</ManSection>
+</Section>
+<Section Label="Examples">
+<Heading>Examples</Heading>
+The function <C>RootsOfPolynomialAsRadicals</C> does not generate output
+inside &GAP;. Depending on the chosen mode, various kinds
+of files can be created. As an example the polynomial from the
+introduction will be considered.
+<Log><![CDATA[
+gap> g := UnivariatePolynomial( Rationals, [1,1,-1,-1,1] );
+x^4-x^3-x^2+x+1
+gap> RootsOfPolynomialAsRadicals(g);
+"/tmp/tmp.8zkw5B/Nst.tex"
+]]></Log>
+will cause a dvi file to appear in a new window:
+<P/>
+An expression by radicals for the roots of the polynomial
+<M>x^{4}-x^{3}-x^{2} + x + 1</M> with the <M>n</M>-th root of unity <M>\zeta_n</M> and
+<P/>
+<M>\omega_1 = \sqrt{ - 3}</M>,
+<P/>
+<M>\omega_2 = \sqrt{\frac{7}{2} - \frac{1}{2}\omega_1}</M>,
+<P/>
+<M>\omega_3 = \sqrt{\frac{7}{2} + \frac{1}{2}\omega_1}</M>,
+<P/>
+is:
+<P/>
+<M>\frac{1}{4} - \frac{1}{4}\omega_1 + \frac{1}{2}\omega_2</M>
+<P/>
+If one wants to work with the roots, it might be helpful to use Maple
+<Cite Key="Maple10"/>, in which an expression like <M>2^{(1/2)}</M> is valid.
+<Log><![CDATA[
+gap> RootsOfPolynomialAsRadicals(g, "maple");
+"/tmp/tmp.k9aTCz/Nst"
+]]></Log>
+will create a file with the following content:
+<Listing><![CDATA[
+w1 := (-3)^(1/2);
+w2 := ((7/2) + (-1/2)*w1)^(1/2);
+w3 := ((7/2) + (1/2)*w1)^(1/2);
+
+a := (1/4) + (1/4)*w1 + (1/2)*w3;
+]]></Listing>
+After those computations several attributes are known for the
+polynomial in &GAP;.
+<Example><![CDATA[
+gap> g := UnivariatePolynomial( Rationals, [1,1,-1,-1,1] );;
+gap> RootsOfPolynomialAsRadicalsNC( g, "off" );
+gap> SplittingField( g );
+<algebraic extension over the Rationals of degree 8>
+gap> GaloisGroupOnRoots( g );
+Group([ (2,4), (1,2)(3,4) ])
+]]></Example>
+</Section>
+</Chapter>
