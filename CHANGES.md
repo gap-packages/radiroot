@@ -1,4 +1,14 @@
-This file describes changes in the RadiRoot package, beginning with version 2.1.
+This file describes changes in the RadiRoot package.
+
+## Unreleased
+
+  - Declare the TransGrp package dependency explicitly
+  - Remove an empty example from the manual, following a patch by Bill
+    Allombert
+  - Remove a pointer to the long-gone GAP `manual.bib` and revise the
+    documentation build script
+  - Remove the obsolete `Autoload` flag from `PackageInfo.g`
+  - Update the CI setup, and convert this file to Markdown
 
 ## 2.9 (2022-03-01)
 
@@ -53,3 +63,28 @@ This file describes changes in the RadiRoot package, beginning with version 2.1.
   - Introduce a copyright
   - Improve the documentation, following the final report of the referee
   - Change the status of the package to 'accepted'. :)
+
+## 2.1 (2006-11-24)
+
+  - Use `FactorsPolynomialAlgExt` instead of `FactorsPolynomialKant` to
+    factor polynomials over algebraic number fields
+
+## 2.0 (2006-09-30)
+
+  - Add a Maple output mode, which writes the radical expressions to a file
+    readable by Maple
+  - Turn `GaloisGroupOnRoots` and the new `RootsAsMatrices` into attributes,
+    and add the property `IsSeparablePolynomial`
+  - Add `IsomorphismMatrixField` and `IsomorphicMatrixField`
+  - Simplify the polynomial before computing its roots
+  - Add a chapter on the info class to the documentation
+  - Require Alnuth 2.2.0
+
+## 1.1 (2006-01-17)
+
+  - Fix the order computation for the root of unity
+  - Translate the source code comments to English
+
+## 1.0 (2005-05-09)
+
+  - Initial release
