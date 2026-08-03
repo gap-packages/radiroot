@@ -3,10 +3,7 @@
 <Heading>Installation</Heading>
 <Section Label="Getting and Installing this Package">
 <Heading>Getting and Installing this Package</Heading>
-This package is available at
-<Log><![CDATA[
-https://gap-packages.github.io/radiroot/
-]]></Log>
+This package is available at <URL>https://gap-packages.github.io/radiroot/</URL>
 in form of a gzipped tar-archive. For installation instructions see
 Chapter&nbsp;<Ref Sect="Installing a GAP Package" BookName="ref"/> in the &GAP; reference manual. 
 Normally you will unpack the archive in the <C>pkg</C> directory of your
