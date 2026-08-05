@@ -14,7 +14,7 @@ Date := "01/03/2022", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
 PackageWWWHome  := "https://gap-packages.github.io/radiroot/",
-README_URL      := Concatenation( ~.PackageWWWHome, "README" ),
+README_URL      := Concatenation( ~.PackageWWWHome, "README.md" ),
 PackageInfoURL  := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
 SourceRepository := rec(
     Type := "git",
