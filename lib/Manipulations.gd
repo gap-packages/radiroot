@@ -11,7 +11,6 @@
 ##
 
 DeclareAttribute( "GaloisGroupOnRoots", IsUnivariatePolynomial );
-DeclareGlobalFunction( "RR_DegreeConclusion" );
 DeclareGlobalFunction( "RR_PrimElImg" );
 DeclareGlobalFunction( "RR_Produkt" );
 DeclareGlobalFunction( "RR_Resolvent" );

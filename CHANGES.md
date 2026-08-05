@@ -2,6 +2,9 @@ This file describes changes in the RadiRoot package.
 
 ## Unreleased
 
+  - Fix `GaloisGroupOnRoots` and `RootsOfPolynomialAsRadicals` running into
+    an error when the splitting field of the polynomial had been computed
+    before, reported by Thomas Breuer in issue #8
   - Declare the TransGrp package dependency explicitly
   - Remove an empty example from the manual, following a patch by Bill
     Allombert

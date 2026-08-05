@@ -61,23 +61,6 @@ InstallMethod(GaloisType,"for polynomials",true,[IsUnivariateRationalFunction
     return TransitiveIdentification( GaloisGroupOnRoots( f ));
 end );
 
-#############################################################################
-##
-#F  RR_DegreeConclusion( <B>, <roots> )
-##
-InstallGlobalFunction( RR_DegreeConclusion, function( B, roots )
-    local i, degs;
-
-    degs := [ ];
-    roots := Filtered( roots, root -> root in B ); 
-    for i in [ 1..Length( roots )-1 ] do
-        degs[i] := (Position( B, roots[i+1] ) - 1) / Product(degs);
-    od;
-    degs[ Length( roots ) ] := Length( B ) / Product(degs);
-
-    return degs;
-end );
-
 
 #############################################################################
 ##
