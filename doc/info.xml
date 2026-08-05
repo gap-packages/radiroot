@@ -1,0 +1,41 @@
+<!-- W  info.tex          Radiroot documentation             Andreas Distler / Y  2006 -->
+<Chapter Label="The Info Class of the Package">
+<Heading>The Info Class of the Package</Heading>
+The <C>info</C> mechanism in &GAP; allows functions to print information
+during the computation (see Section <Ref Sect="Info Functions" BookName="ref"/> in the
+&GAP; reference manual for general information).
+<Section>
+<Heading>The Info Class of the Package</Heading>
+<ManSection>
+<InfoClass Name="InfoRadiroot"/>
+<Description>
+is the info class of this package.
+</Description>
+</ManSection>
+<ManSection>
+<Oper Name="SetInfoLevel" Arg="infoclass, level"/>
+<Description>
+sets the info level for <C>InfoRadiroot</C> to <A>level</A>, where <A>level</A> has
+to be an integer in the range 0-4.
+<P/>
+The default value for <C>InfoRadiroot</C> is 1. Information why a function
+returns <K>fail</K> will be given with this setting.
+<Example><![CDATA[
+gap> InfoLevel(InfoRadiroot);
+1
+gap> RootsOfPolynomialAsRadicals(x^5-4*x+2);
+#I  Polynomial is not solvable.
+fail
+]]></Example>
+Setting the info level to a higher value will cause messages to show up during
+single steps of the computation. On level 2 one gets a rough
+overview. Those who want to go into the details of the algorithm
+described in <Cite Key="Distler05"/> and of the implementation itself will
+find the information on level 3-4 helpful.
+<P/>
+To use the package in silent mode the info level can be given the
+value 0.
+</Description>
+</ManSection>
+</Section>
+</Chapter>
