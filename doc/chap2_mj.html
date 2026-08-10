@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<title>GAP (RadiRoot) - Chapter 2: Functionality of the Package</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap2"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap2.html">[MathJax off]</a></p>
+<p><a id="X7B7C385A808701F8" name="X7B7C385A808701F8"></a></p>
+<div class="ChapSects"><a href="chap2_mj.html#X7B7C385A808701F8">2 <span class="Heading">Functionality of the Package</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X7837A2987D8736B7">2.1 <span class="Heading">Methods for Rational Polynomials</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7F0CA8677CC4C763">2.1-1 IsSeparablePolynomial</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X79B10B337A3B1C6E">2.1-2 IsSolvable</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X87531E03849391C1">2.1-3 SplittingField</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X8079E80E7939A6FD">2.1-4 GaloisGroupOnRoots</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X83ACBF027F5531F6">2.2 <span class="Heading">Solving a Polynomial by Radicals</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X87FF39F0784BEE4D">2.2-1 RootsOfPolynomialAsRadicals</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X8566EB6A873172AD">2.2-2 RootsOfPolynomialAsRadicalsNC</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X7A489A5D79DA9E5C">2.3 <span class="Heading">Examples</span></a>
+</span>
+</div>
+</div>
+
+<h3>2 <span class="Heading">Functionality of the Package</span></h3>
+
+<p>This chapter describes the methods available in the <strong class="pkg">Radiroot</strong> package.</p>
+
+<p><a id="X7837A2987D8736B7" name="X7837A2987D8736B7"></a></p>
+
+<h4>2.1 <span class="Heading">Methods for Rational Polynomials</span></h4>
+
+<p><a id="X7F0CA8677CC4C763" name="X7F0CA8677CC4C763"></a></p>
+
+<h5>2.1-1 IsSeparablePolynomial</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSeparablePolynomial</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>returns <code class="keyw">true</code> if the rational polynomial <var class="Arg">f</var> has simple roots only and <code class="keyw">false</code> otherwise.</p>
+
+<p><a id="X79B10B337A3B1C6E" name="X79B10B337A3B1C6E"></a></p>
+
+<h5>2.1-2 IsSolvable</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSolvable</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSolvablePolynomial</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>returns <code class="keyw">true</code> if the rational polynomial <var class="Arg">f</var> has a solvable Galois group and <code class="keyw">false</code> otherwise. It signals an error if there exists an irreducible factor with degree greater than 15.</p>
+
+<p><a id="X87531E03849391C1" name="X87531E03849391C1"></a></p>
+
+<h5>2.1-3 SplittingField</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SplittingField</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphicMatrixField</code>( <var class="Arg">F</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RootsAsMatrices</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphismMatrixField</code>( <var class="Arg">F</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>For a normed, rational polynomial <var class="Arg">f</var>, <code class="code">SplittingField(<var class="Arg">f</var>)</code> returns the smallest algebraic extension field <var class="Arg">L</var> of the rationals containing all roots of <var class="Arg">f</var>. The field is constructed with <code class="code">FieldByPolynomial</code> (see Creation of number fields in <strong class="pkg">Alnuth</strong>). The primitive element of <var class="Arg">L</var> is denoted by <code class="code">a</code>. A matrix field <var class="Arg">K</var> isomorphic to <var class="Arg">L</var> is known after the computation and can be accessed using <code class="code">IsomorphicMatrixField(<var class="Arg">L</var></code>. The matrices, one for each distinct root of <var class="Arg">f</var>, in the list produced by <code class="code">RootsOfMatrices(<var class="Arg">f</var>)</code> lie in <var class="Arg">K</var>. <code class="code">IsomorphismMatrixField( <var class="Arg">L</var> )</code> returns an isomorphism of <var class="Arg">L</var> onto <var class="Arg">K</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x := Indeterminate( Rationals, "x" );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f := UnivariatePolynomial( Rationals, [1,3,4,1] );</span>
+x^3+4*x^2+3*x+1
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L := SplittingField( f );</span>
+&lt;algebraic extension over the Rationals of degree 6&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">y := Indeterminate( L, "y" );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">FactorsPolynomialAlgExt( L, f );</span>
+[ y+(-3/94*a^4-24/47*a^3-253/94*a^2-535/94*a-168/47), 
+  y+(-3/94*a^4-24/47*a^3-253/94*a^2-441/94*a+20/47), 
+  y+(3/47*a^4+48/47*a^3+253/47*a^2+488/47*a+336/47) ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsomorphicMatrixField( L );</span>
+&lt;rational matrix field of degree 6&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Display(RootsAsMatrices(f)[1]);</span>
+[ [   0,   1,   0,   0,   0,   0 ],
+  [   0,   0,   1,   0,   0,   0 ],
+  [  -1,  -3,  -4,   0,   0,   0 ],
+  [   0,   0,   0,   0,   1,   0 ],
+  [   0,   0,   0,   0,   0,   1 ],
+  [   0,   0,   0,  -1,  -3,  -4 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MinimalPolynomial( Rationals, RootsAsMatrices(f)[1]);</span>
+x^3+4*x^2+3*x+1
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">iso := IsomorphismMatrixField( L );</span>
+MappingByFunction( &lt;algebraic extension over the Rationals of degree 
+6&gt;, &lt;rational matrix field of degree 
+6&gt;, function( x ) ... end, function( mat ) ... end )
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PreImages( iso, RootsAsMatrices( f ) );</span>
+[ -3/47*a^4-48/47*a^3-253/47*a^2-488/47*a-336/47, 
+  3/94*a^4+24/47*a^3+253/94*a^2+441/94*a-20/47, 
+  3/94*a^4+24/47*a^3+253/94*a^2+535/94*a+168/47 ]
+</pre></div>
+
+<p>To factorise a polynomial over its splitting field one has to use <code class="code">FactorsPolynomialAlgExt</code> (see <strong class="pkg">Alnuth</strong>) instead of <code class="code">Factors</code>.</p>
+
+<p><a id="X8079E80E7939A6FD" name="X8079E80E7939A6FD"></a></p>
+
+<h5>2.1-4 GaloisGroupOnRoots</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GaloisGroupOnRoots</code>( <var class="Arg">f</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>calculates the Galois group <var class="Arg">G</var> of the rational polynomial <var class="Arg">f</var>, which has to be separable, as a permutation group with respect to the ordering of the roots of <var class="Arg">f</var> given as matrices by <code class="code">RootsAsMatrices</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GaloisGroupOnRoots(f);</span>
+Group([ (2,3), (1,2) ])
+</pre></div>
+
+<p>If you only want to get the Galois group abstractly, and if <span class="SimpleMath">\(f\)</span> is irreducible of degree at most 15, it is often better to use the function <code class="code">GaloisType</code> (see Chapter <a href="https://docs.gap-system.org/doc/ref/chap66_mj.html#X7F45E9E47EA2C18B"><span class="RefLink">Reference: Polynomials over the Rationals</span></a> in the <strong class="pkg">GAP</strong> reference manual).</p>
+
+<p><a id="X83ACBF027F5531F6" name="X83ACBF027F5531F6"></a></p>
+
+<h4>2.2 <span class="Heading">Solving a Polynomial by Radicals</span></h4>
+
+<p><a id="X87FF39F0784BEE4D" name="X87FF39F0784BEE4D"></a></p>
+
+<h5>2.2-1 RootsOfPolynomialAsRadicals</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RootsOfPolynomialAsRadicals</code>( <var class="Arg">f</var>[, <var class="Arg">mode</var>[, <var class="Arg">file</var>]] )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>computes a solution by radicals for the irreducible, rational polynomial <var class="Arg">f</var> up to degree 15 if the Galois group of <var class="Arg">f</var> is solvable, and returns <code class="keyw">fail</code> otherwise. If it succeeds and <var class="Arg">mode</var> is not <code class="code">off</code>, the function returns the path to a file containing the description of the roots of <var class="Arg">f</var> and generators of cyclic radical extensions to produce its splitting field.</p>
+
+<p>The user has several options to specify what happens with the results of the computation. Therefore the optional second argument <var class="Arg">mode</var>, a string, can be set to one of the following values:</p>
+
+
+<div class="example"><pre>
+"dvi"
+</pre></div>
+
+<p>Provided <code class="code">latex</code> and the dvi viewer <code class="code">xdvi</code> are available, this option will display the irreducible radical expression for the roots and cyclic extension generators in a new window. The package uses this option as the default.</p>
+
+
+<div class="example"><pre>
+"latex"
+</pre></div>
+
+<p>A LaTeX file is generated which contains the encoding for the expression by radicals. This gives the user the opportunity to adjust the layout of the individual example before displaying the expression.</p>
+
+
+<div class="example"><pre>
+"maple"
+</pre></div>
+
+<p>The generated file can be read into Maple <a href="chapBib_mj.html#biBMaple10">[MGH+05]</a> which makes a root of <var class="Arg">f</var> available as variable <code class="code">a</code>.</p>
+
+
+<div class="example"><pre>
+"off"
+</pre></div>
+
+<p>In this mode the function does not actually compute a radical expression but is only called for its side effects. Namely, the attributes <code class="code">SplittingField</code>, <code class="code">RootsAsMatrices</code> and <code class="code">GaloisGroupOnRoots</code> are known for <var class="Arg">f</var> afterwards. This is slightly more effective than calling the corresponding operations one by one.</p>
+
+<p>With the optional third argument <var class="Arg">file</var> the user can specify a file name under which the description files will be stored in the directory from which <strong class="pkg">GAP</strong> was called. Depending on the option for <var class="Arg">mode</var> an extension like <code class="code">.tex</code> might be added automatically. If <var class="Arg">file</var> is not given, the function places description files in a new directory <code class="code">/tmp/tmp.</code><var class="Arg">string</var> with names such as <code class="code">Nst</code> and <code class="file">Nst.tex</code>; the temporary directory is removed at the end of the GAP session.</p>
+
+<p>The computation may take a very long time and can get unfeasible if the degree of <var class="Arg">f</var> is greater than 7.</p>
+
+<p><a id="X8566EB6A873172AD" name="X8566EB6A873172AD"></a></p>
+
+<h5>2.2-2 RootsOfPolynomialAsRadicalsNC</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RootsOfPolynomialAsRadicalsNC</code>( <var class="Arg">f</var>[, <var class="Arg">mode</var>[, <var class="Arg">file</var>]] )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<p>does essentially the same as <code class="code">RootsOfPolynomialAsRadicals</code> except that it runs no test on the input before starting the actual computation. Therefore it can be used for polynomials with arbitrary degree, but it may run for a very long time until a non-solvable polynomial is recognized as such.</p>
+
+<p>Detailed examples for these two functions can be found in the next section.</p>
+
+<p><a id="X7A489A5D79DA9E5C" name="X7A489A5D79DA9E5C"></a></p>
+
+<h4>2.3 <span class="Heading">Examples</span></h4>
+
+<p>The function <code class="code">RootsOfPolynomialAsRadicals</code> does not generate output inside <strong class="pkg">GAP</strong>. Depending on the chosen mode, various kinds of files can be created. As an example the polynomial from the introduction will be considered.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g := UnivariatePolynomial( Rationals, [1,1,-1,-1,1] );</span>
+x^4-x^3-x^2+x+1
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RootsOfPolynomialAsRadicals(g);</span>
+"/tmp/tmp.8zkw5B/Nst.tex"
+</pre></div>
+
+<p>will cause a dvi file to appear in a new window:</p>
+
+<p>An expression by radicals for the roots of the polynomial <span class="SimpleMath">\(x^{4}-x^{3}-x^{2} + x + 1\)</span> with the <span class="SimpleMath">\(n\)</span>-th root of unity <span class="SimpleMath">\(\zeta_n\)</span> and</p>
+
+<p><span class="SimpleMath">\(\omega_1 = \sqrt{ - 3}\)</span>,</p>
+
+<p><span class="SimpleMath">\(\omega_2 = \sqrt{\frac{7}{2} - \frac{1}{2}\omega_1}\)</span>,</p>
+
+<p><span class="SimpleMath">\(\omega_3 = \sqrt{\frac{7}{2} + \frac{1}{2}\omega_1}\)</span>,</p>
+
+<p>is:</p>
+
+<p><span class="SimpleMath">\(\frac{1}{4} - \frac{1}{4}\omega_1 + \frac{1}{2}\omega_2\)</span></p>
+
+<p>If one wants to work with the roots, it might be helpful to use Maple <a href="chapBib_mj.html#biBMaple10">[MGH+05]</a>, in which an expression like <span class="SimpleMath">\(2^{(1/2)}\)</span> is valid.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RootsOfPolynomialAsRadicals(g, "maple");</span>
+"/tmp/tmp.k9aTCz/Nst"
+</pre></div>
+
+<p>will create a file with the following content:</p>
+
+
+<div class="example"><pre>
+w1 := (-3)^(1/2);
+w2 := ((7/2) + (-1/2)*w1)^(1/2);
+w3 := ((7/2) + (1/2)*w1)^(1/2);
+
+a := (1/4) + (1/4)*w1 + (1/2)*w3;
+</pre></div>
+
+<p>After those computations several attributes are known for the polynomial in <strong class="pkg">GAP</strong>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g := UnivariatePolynomial( Rationals, [1,1,-1,-1,1] );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RootsOfPolynomialAsRadicalsNC( g, "off" );</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SplittingField( g );</span>
+&lt;algebraic extension over the Rationals of degree 8&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GaloisGroupOnRoots( g );</span>
+Group([ (2,4), (1,2)(3,4) ])
+</pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

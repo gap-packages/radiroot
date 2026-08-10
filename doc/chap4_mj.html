@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<title>GAP (RadiRoot) - Chapter 4: Installation</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap4"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap3_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapBib_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap4.html">[MathJax off]</a></p>
+<p><a id="X8360C04082558A12" name="X8360C04082558A12"></a></p>
+<div class="ChapSects"><a href="chap4_mj.html#X8360C04082558A12">4 <span class="Heading">Installation</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4_mj.html#X7B4748048051AB9F">4.1 <span class="Heading">Getting and Installing this Package</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4_mj.html#X781C2F107F76F8A4">4.2 <span class="Heading">Loading and Testing the Package</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4_mj.html#X810076E47BDA9F94">4.3 <span class="Heading">Additional Requirements</span></a>
+</span>
+</div>
+</div>
+
+<h3>4 <span class="Heading">Installation</span></h3>
+
+<p><a id="X7B4748048051AB9F" name="X7B4748048051AB9F"></a></p>
+
+<h4>4.1 <span class="Heading">Getting and Installing this Package</span></h4>
+
+<p>This package is available at <span class="URL"><a href="https://gap-packages.github.io/radiroot/">https://gap-packages.github.io/radiroot/</a></span> in form of a gzipped tar-archive. For installation instructions see Chapter <a href="https://docs.gap-system.org/doc/ref/chap76_mj.html#X82473E4B8756C6CD"><span class="RefLink">Reference: Installing a GAP Package</span></a> in the <strong class="pkg">GAP</strong> reference manual. Normally you will unpack the archive in the <code class="code">pkg</code> directory of your <strong class="pkg">GAP</strong> version by typing:</p>
+
+
+<div class="example"><pre>
+    bash&gt; tar xfz radiroot-2.9.tar.gz        # for the gzipped tar-archive
+</pre></div>
+
+<p><a id="X781C2F107F76F8A4" name="X781C2F107F76F8A4"></a></p>
+
+<h4>4.2 <span class="Heading">Loading and Testing the Package</span></h4>
+
+<p>To use the <strong class="pkg">Radiroot</strong> package you have to request it explicitly. This is done by calling</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LoadPackage("radiroot");</span>
+-----------------------------------------------------------------------------
+Loading  RadiRoot 2.9 (Roots of a Polynomial as Radicals)
+by Andreas Distler (a.distler@tu-bs.de).
+Homepage: https://gap-packages.github.io/radiroot/
+-----------------------------------------------------------------------------
+true
+</pre></div>
+
+<p>The <code class="code">LoadPackage</code> command is described in Section <code class="func">LoadPackage</code> (<a href="https://docs.gap-system.org/doc/ref/chap76_mj.html#X79B373A77B29D1F5"><span class="RefLink">Reference: LoadPackage</span></a>) in the <strong class="pkg">GAP</strong> reference manual.</p>
+
+<p>If you want to load the <strong class="pkg">Radiroot</strong> package by default, you can put the <code class="code">LoadPackage</code> command into your <code class="code">gaprc</code> file (see Section <a href="https://docs.gap-system.org/doc/ref/chap3_mj.html#X84D4CF587D437C00"><span class="RefLink">Reference: The gaprc file</span></a> in the <strong class="pkg">GAP</strong> reference manual).</p>
+
+<p>Once the package is loaded, it is possible to check the correct installation by running the test suite of the package with the command</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ReadPackage( "radiroot", "tst/testall.g" );</span>
+</pre></div>
+
+<p><a id="X810076E47BDA9F94" name="X810076E47BDA9F94"></a></p>
+
+<h4>4.3 <span class="Heading">Additional Requirements</span></h4>
+
+<p>To use <strong class="pkg">Radiroot</strong> the package <strong class="pkg">Alnuth</strong> in version 3.0 or higher has to be loaded with its interface fully functional.</p>
+
+<p>In the standard mode a dvi file is created to display the roots of a polynomial. As default the package uses the command <code class="code">latex</code> searched for in your system programs to create the dvi file and the command <code class="code">xdvi</code> to start the dvi viewer. If you can not use this settings you will have to change the function <code class="code">RR_Display</code> in the file <code class="file">Strings.gi</code> in the subdirectory <code class="code">lib</code> of the package.</p>
+
+<p> </p>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap3_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapBib_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

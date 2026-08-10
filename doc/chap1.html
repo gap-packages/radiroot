@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (RadiRoot) - Chapter 1: Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap1"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap2.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap1_mj.html">[MathJax on]</a></p>
+<p><a id="X7DFB63A97E67C0A1" name="X7DFB63A97E67C0A1"></a></p>
+<div class="ChapSects"><a href="chap1.html#X7DFB63A97E67C0A1">1 <span class="Heading">Introduction</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1.html#X861E5DF986F89AE2">1.1 <span class="Heading">License</span></a>
+</span>
+</div>
+</div>
+
+<h3>1 <span class="Heading">Introduction</span></h3>
+
+<p>This package provides functionality to deal with one of the fundamental problems in algebra. The roots of a rational polynomial shall be expressed by radicals. This means one is only allowed to use the four basic operations <span class="SimpleMath">(+, -, ⋅ ,÷)</span> and to extract roots. For example, a radical expression for the roots of the polynomial <span class="SimpleMath">x^4 - x^3 - x^2 + x + 1</span> is</p>
+
+<p class="pcenter">
+\matrix{
+\frac{1}{4} + \frac{1}{4}\sqrt{-3} + \frac{1}{2}\sqrt{\frac{7}{2} +
+  \frac{1}{2}\sqrt{-3}}.
+}
+</p>
+
+<p>There are formulas to solve the general equation <span class="SimpleMath">x^n+ a_n-1x^n-1+ ... + a_1x+a_0 = 0</span> up to degree 4. For higher degrees such formulae do not exist (<a href="chapBib.html#biBAbel26">[Abe26]</a>). It was Évariste Galois (1811 -- 1832) who discovered that there exists a radical expression for the roots if and only if the Galois group of the polynomial - initially a permutation group on the roots - is solvable <a href="chapBib.html#biBGalois97">[Gal97]</a>. But the task itself was impractical in his days. This package is the first public tool which provides a practical method for solving a polynomial algebraically. The implementation is based on Galois' ideas and the algorithm is described in <a href="chapBib.html#biBDistler05">[Dis05]</a>.</p>
+
+<p>The package can provide the result in various forms. As a default an expression is given in a similar way as in the example above. Alternatively, a file containing the roots might be created which is readable by Maple <a href="chapBib.html#biBMaple10">[MGH+05]</a>. In <strong class="pkg">GAP</strong> itself some information deduced during the computation is available.</p>
+
+<p>The user should be aware that radical expressions can get very complicated even for polynomials of small degree. Especially because the algorithm will find an irreducible radical expression. That means one gets a root of the given polynomial for every choice of a value of the radicals in the expression. Moreover it is not the aim of this package to give a simplest expression, in any sense.</p>
+
+<p>In Chapter 2 the methods provided by this package are listed and explained.</p>
+
+<p>Chapter 3 gives details about the info class of this package. See Section <a href="https://docs.gap-system.org/doc/ref/chap7.html#X7A9C902479CB6F7C"><span class="RefLink">Reference: Info Functions</span></a> in the <strong class="pkg">GAP</strong> reference manual for general information about info classes.</p>
+
+<p>While the installation of the package follows standard <strong class="pkg">GAP</strong> rules the Chapter 4 contains information about external programs required by <strong class="pkg">Radiroot</strong> in its default setup.</p>
+
+<p>This package uses the interface in the package <strong class="pkg">Alnuth</strong>, to factorise polynomials over algebraic number fields. This functionality must be available to use the functions in <strong class="pkg">Radiroot</strong>.</p>
+
+<p><a id="X861E5DF986F89AE2" name="X861E5DF986F89AE2"></a></p>
+
+<h4>1.1 <span class="Heading">License</span></h4>
+
+<p>This package is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.</p>
+
+<p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap2.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="https://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>
