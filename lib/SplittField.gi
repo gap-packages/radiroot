@@ -203,7 +203,7 @@ end );
 ##  AlgebraicExtension. The roots of <poly> are also stored.  
 ##
 InstallGlobalFunction( RR_Zerfaellungskoerper, function( poly, erw )
-    local matA,matB,faktoren,i,f,minpol,roots,primEl, map;
+    local matA,matB,faktoren,i,f,minpol,roots,primEl, map, K;
 
     # catch trivial case
     if Degree( poly ) = 1 then 
@@ -213,17 +213,24 @@ InstallGlobalFunction( RR_Zerfaellungskoerper, function( poly, erw )
 
     # Splitting field already known
     if not IsBound( erw.unity ) and HasSplittingField( poly ) then
-        erw.H := SplittingField( poly );
-        erw.K := IsomorphicMatrixField( erw.H );
-        # roots will be needed in any further computation
-        erw.roots := [ ShallowCopy( RootsAsMatrices( poly ) ), [] ];
-        erw.degs := RR_DegreeConclusion( Basis(erw.K), erw.roots[1] );
-        Remove( erw.roots[1] );
-        erw.coeffs := Filtered(Coefficients(Basis(erw.K),
-                                            PrimitiveElement(erw.K)),
-                               i -> i <> 0 );
+        K := IsomorphicMatrixField( SplittingField( poly ) );
+        # The way the tower of fields was built up cannot be recovered from
+        # <K> alone, it has to be stored; without this data the splitting
+        # field is constructed again from scratch.
+        if IsBound( K!.RR_data ) then
+            erw.H := SplittingField( poly );
+            erw.K := K;
+            erw.degs := ShallowCopy( K!.RR_data.degs );
+            erw.coeffs := ShallowCopy( K!.RR_data.coeffs );
+            # the same roots in the same order as in a fresh computation;
+            # in particular the roots that generate the tower of fields come
+            # first, in the order in which they were adjoined, as assumed by
+            # 'RR_Produkt' and 'RR_PrimElImg'
+            erw.roots := [ ShallowCopy( K!.RR_data.roots ),
+                           ShallowCopy( K!.RR_data.linroots ) ];
 
-        return erw;   
+            return erw;
+        fi;
     fi;
 
     roots := [ ];
@@ -304,6 +311,15 @@ InstallGlobalFunction( RR_Zerfaellungskoerper, function( poly, erw )
                     mat -> RR_RootInH( rec( K := erw.K, H := erw.H), mat ));
     SetIsomorphismMatrixField( erw.H, map );
     SetSplittingField( poly, erw.H );
+
+    # store the data needed to rebuild this record when the splitting field
+    # of <poly> is used again
+    if not IsBound( erw.unity ) and erw.H <> Rationals then
+        erw.K!.RR_data := rec( degs := ShallowCopy( erw.degs ),
+                               coeffs := ShallowCopy( erw.coeffs ),
+                               roots := ShallowCopy( erw.roots[1] ),
+                               linroots := ShallowCopy( erw.roots[2] ) );
+    fi;
 
     return erw;
 end );
