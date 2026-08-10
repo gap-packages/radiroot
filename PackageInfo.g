@@ -9,8 +9,8 @@ SetPackageInfo( rec(
 
 PackageName := "RadiRoot",
 Subtitle := "Roots of a Polynomial as Radicals",
-Version := "2.9",
-Date := "01/03/2022", # dd/mm/yyyy format
+Version := "2.10",
+Date := "11/08/2026", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
 PackageWWWHome  := "https://gap-packages.github.io/radiroot/",
@@ -61,7 +61,7 @@ PackageDoc := rec(
 ),
 
 Dependencies := rec(
-  GAP := ">=4.7",
+  GAP := ">=4.9",
   NeededOtherPackages := [[ "Alnuth", ">=3.0" ], [ "TransGrp", ">=1.0" ]],
   SuggestedOtherPackages := [],
   ExternalConditions := ["latex and the dvi-viewer xdvi are recommended"]
